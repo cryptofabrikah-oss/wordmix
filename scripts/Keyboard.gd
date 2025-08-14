@@ -20,14 +20,14 @@ func _build_keys() -> void:
 	_clear_children(self)
 	for i: int in range(ROWS.size()):
 		var h: HBoxContainer = HBoxContainer.new()
-		h.add_theme_constant_override("separation", 6)
+		h.add_theme_constant_override("separation", 1)
 		add_child(h)
 		var row: String = ROWS[i]
 
 		# Enter button in last row
 		if i == 2:
 			var enter_btn: Button = _make_button("ENTER")
-			enter_btn.custom_minimum_size = Vector2(72, 48)
+			enter_btn.custom_minimum_size = Vector2(48, 24)
 			enter_btn.pressed.connect(func() -> void: emit_signal("enter_pressed"))
 			h.add_child(enter_btn)
 
@@ -40,7 +40,7 @@ func _build_keys() -> void:
 
 		if i == 2:
 			var back_btn: Button = _make_button("⌫")
-			back_btn.custom_minimum_size = Vector2(72, 48)
+			back_btn.custom_minimum_size = Vector2(48, 24)
 			back_btn.pressed.connect(func() -> void: emit_signal("backspace_pressed"))
 			h.add_child(back_btn)
 
@@ -51,7 +51,7 @@ func _clear_children(container: Control) -> void:
 func _make_button(t: String) -> Button:
 	var b: Button = Button.new()
 	b.text = t
-	b.custom_minimum_size = Vector2(40, 48)
+	b.custom_minimum_size = Vector2(32, 48)
 	b.focus_mode = Control.FOCUS_NONE
 	b.add_theme_font_size_override("font_size", 18)
 	_update_button_style(b, "empty")
