@@ -15,6 +15,7 @@ var answer: String = ""
 var row: int = 0
 var col: int = 0
 var words: PackedStringArray
+var words_map: Dictionary
 var current_guess: String = ""
 
 var mode: GameMode = GameMode.DAILY
@@ -25,8 +26,11 @@ func _ready() -> void:
 	var f: FileAccess = FileAccess.open("res://data/words.txt", FileAccess.READ)
 	var content: String = f.get_as_text()
 	words = PackedStringArray()
+	words_map = {}
 	for line in content.strip_edges(true, true).split("\n"):
-		words.append(line.strip_edges().to_upper())
+		var word : String = line.strip_edges().to_upper()
+		var clean: String = remove_accents(word)			
+		words_map[clean] = word
 
 	# UI hooks
 	keyboard.letter_pressed.connect(_on_key_letter)
@@ -39,10 +43,27 @@ func _ready() -> void:
 	_build_grid()
 	_pick_answer()
 	_update_status()
+	
+func remove_accents(text: String) -> String:
+	var replacements = {
+		"Á": "A", "À": "A", "Â": "A", "Ã": "A",
+		"É": "E", "È": "E", "Ê": "E",
+		"Í": "I", "Ì": "I", "Î": "I",
+		"Ó": "O", "Ò": "O", "Ô": "O", "Õ": "O",
+		"Ú": "U", "Ù": "U", "Û": "U",
+		"Ç": "C"
+	}
+	var result: String = text
+	for accented in replacements.keys():
+		result = result.replace(accented, replacements[accented])
+	return result
 
 func _build_grid() -> void:
 	_clear_children(grid)
 	grid.columns = WORD_SIZE
+	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid.size_flags_vertical = Control.SIZE_SHRINK_CENTER  # mantém centralizado verticalmente
+	#grid.custom_constants/separation = 8  # espaçamento entre tiles
 	for r in range(MAX_TRIES):
 		for c in range(WORD_SIZE):
 			var tile: Control = load("res://scenes/Tile.tscn").instantiate() as Control
@@ -77,7 +98,7 @@ func _pick_answer() -> void:
 		answer = _pick_daily_word()
 	else:
 		rng.randomize()
-		answer = words[rng.randi_range(0, words.size()-1)]
+		answer = words_map.keys()[rng.randi_range(0, words_map.keys().size()-1)]
 
 func _update_status(text: String = "") -> void:
 	if text == "":
@@ -110,10 +131,10 @@ func _on_key_enter() -> void:
 		_flash_status("Palavra incompleta.")
 		return
 	var guess: String = current_guess.to_upper()
-	if not words.has(guess):
+	if not words_map.keys().has(guess):
 		_flash_status("Palavra não está na lista.")
 		return
-	_reveal_guess(guess)
+	_reveal_guess(words_map.get(guess))
 	current_guess = ""
 	col = 0
 	if guess == answer:
@@ -164,7 +185,7 @@ func _pick_daily_word() -> String:
 	var days: int = int(floor(unix_time / 86400.0))
 	var local_rng: RandomNumberGenerator = RandomNumberGenerator.new()
 	local_rng.seed = days
-	return words[local_rng.randi_range(0, words.size()-1)]
+	return words_map.keys()[local_rng.randi_range(0, words_map.keys().size()-1)]
 
 func _flash_status(t: String) -> void:
 	status_lbl.text = t

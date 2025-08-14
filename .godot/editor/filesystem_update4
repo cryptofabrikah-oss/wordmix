@@ -1,4 +1,4 @@
 res://scenes/Main.tscn
-res://scripts/Tile.gd
+res://data/words.txt
 res://scripts/Main.gd
-res://scripts/Keyboard.gd
+res://scripts/Tile.gd
