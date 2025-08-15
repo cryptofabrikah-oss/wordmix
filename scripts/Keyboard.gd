@@ -18,31 +18,43 @@ func _ready() -> void:
 
 func _build_keys() -> void:
 	_clear_children(self)
-	for i: int in range(ROWS.size()):
+
+	# VBoxContainer principal (teclado)
+	self.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	self.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+
+
+	# Construir linhas de letras
+	for row_str in ROWS:
 		var h: HBoxContainer = HBoxContainer.new()
-		h.add_theme_constant_override("separation", 1)
+		h.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		h.add_theme_constant_override("separation", 2)
 		add_child(h)
-		var row: String = ROWS[i]
 
-		# Enter button in last row
-		if i == 2:
-			var enter_btn: Button = _make_button("ENTER")
-			enter_btn.custom_minimum_size = Vector2(48, 24)
-			enter_btn.pressed.connect(func() -> void: emit_signal("enter_pressed"))
-			h.add_child(enter_btn)
-
-		for j: int in range(row.length()):
-			var ch: String = row[j]
+		for ch in row_str:
 			var b: Button = _make_button(ch)
 			var btn_ch: String = ch
 			b.pressed.connect(func() -> void: emit_signal("letter_pressed", btn_ch))
 			h.add_child(b)
 
-		if i == 2:
-			var back_btn: Button = _make_button("⌫")
-			back_btn.custom_minimum_size = Vector2(48, 24)
-			back_btn.pressed.connect(func() -> void: emit_signal("backspace_pressed"))
-			h.add_child(back_btn)
+	# Linha de botões especiais (ENVIAR e BACKSPACE)
+	var special_row: HBoxContainer = HBoxContainer.new()
+	special_row.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	special_row.add_theme_constant_override("separation", 5)
+	add_child(special_row)
+
+	# Botão ENVIAR
+	var enter_btn: Button = _make_button("ENVIAR")
+	enter_btn.custom_minimum_size = Vector2(64, 48)
+	enter_btn.pressed.connect(func() -> void: emit_signal("enter_pressed"))
+	special_row.add_child(enter_btn)
+
+	# Botão BACKSPACE
+	var back_btn: Button = _make_button("⌫")
+	back_btn.custom_minimum_size = Vector2(64, 48)
+	back_btn.pressed.connect(func() -> void: emit_signal("backspace_pressed"))
+	special_row.add_child(back_btn)
+
 
 func _clear_children(container: Control) -> void:
 	for child in container.get_children():
@@ -87,7 +99,7 @@ func _update_button_style(b: Button, state: String) -> void:
 		"present":
 			col = Color.hex(0xc9b458ff)
 		"absent":
-			col = Color.hex(0x3a3a3cff)
+			col = Color.hex(0xd36259ff)
 	_make_btn_style(b, col)
 
 func _make_btn_style(b: Button, color: Color) -> void:
