@@ -9,12 +9,14 @@ var label: Label
 
 func _ready():
 	label = Label.new()
-	custom_minimum_size = Vector2(60, 60)
+	custom_minimum_size = Vector2(90, 90)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	label.add_theme_font_size_override("font_size", 28)
+	label.set_anchor(SIDE_RIGHT, 1)
+	label.set_anchor(SIDE_BOTTOM, 1)
+	label.add_theme_font_size_override("font_size", 36)
 	add_child(label)
 	_update_style()
 

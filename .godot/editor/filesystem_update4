@@ -2,3 +2,5 @@ res://scenes/Main.tscn
 res://data/words.txt
 res://scripts/Main.gd
 res://scripts/Tile.gd
+res://scenes/Tile.tscn
+res://scenes/Keyboard.tscn

@@ -18,7 +18,7 @@ var words: PackedStringArray
 var words_map: Dictionary
 var current_guess: String = ""
 
-var mode: GameMode = GameMode.DAILY
+var mode: GameMode = GameMode.INFINITE
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -36,7 +36,7 @@ func _ready() -> void:
 	keyboard.letter_pressed.connect(_on_key_letter)
 	keyboard.enter_pressed.connect(_on_key_enter)
 	keyboard.backspace_pressed.connect(_on_key_backspace)
-	mode_btn.pressed.connect(_toggle_mode)
+	#mode_btn.pressed.connect(_toggle_mode)
 	newgame_btn.pressed.connect(_new_game)
 
 	# Init
@@ -61,9 +61,7 @@ func remove_accents(text: String) -> String:
 func _build_grid() -> void:
 	_clear_children(grid)
 	grid.columns = WORD_SIZE
-	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	grid.size_flags_vertical = Control.SIZE_SHRINK_CENTER  # mantém centralizado verticalmente
-	#grid.custom_constants/separation = 8  # espaçamento entre tiles
+	
 	for r in range(MAX_TRIES):
 		for c in range(WORD_SIZE):
 			var tile: Control = load("res://scenes/Tile.tscn").instantiate() as Control
@@ -132,7 +130,8 @@ func _on_key_enter() -> void:
 		return
 	var guess: String = current_guess.to_upper()
 	if not words_map.keys().has(guess):
-		_flash_status("Palavra não está na lista.")
+		_flash_status("Palavra não existe.")
+		#_clear()
 		return
 	_reveal_guess(words_map.get(guess))
 	current_guess = ""
@@ -179,6 +178,13 @@ func _reveal_guess(guess: String) -> void:
 		tile.set_letter(guess[i])
 		tile.set_state(states[i])
 		keyboard.set_letter_state(guess[i], states[i])
+		
+func _clear() -> void:
+	for i in range(WORD_SIZE):
+		var idx: int = row * WORD_SIZE + i
+		var tile: Node = grid.get_child(idx)
+		tile.set_letter("")      # limpa a letra
+		tile.set_state("empty")  # volta ao estado vazio
 
 func _pick_daily_word() -> String:
 	var unix_time: int = Time.get_unix_time_from_system()

@@ -4,4 +4,6 @@
 
 [node name="Tile" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("1")
