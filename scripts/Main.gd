@@ -146,8 +146,8 @@ func _on_key_enter() -> void:
 		_lock_input()
 
 func _lock_input() -> void:
-	pass # basta checar row >= MAX_TRIES
-
+	get_tree().change_scene_to_file("res://scenes/end_game.tscn")
+	
 func _reveal_guess(guess: String) -> void:
 	var freq: Dictionary = {}
 	for i in range(WORD_SIZE):
