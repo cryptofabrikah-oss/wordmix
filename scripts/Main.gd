@@ -37,7 +37,7 @@ func _ready() -> void:
 	keyboard.enter_pressed.connect(_on_key_enter)
 	keyboard.backspace_pressed.connect(_on_key_backspace)
 	#mode_btn.pressed.connect(_toggle_mode)
-	newgame_btn.pressed.connect(_new_game)
+#	newgame_btn.pressed.connect(_new_game)
 
 	# Init
 	_build_grid()

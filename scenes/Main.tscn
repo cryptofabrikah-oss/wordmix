@@ -19,28 +19,6 @@ offset_right = 648.0
 offset_bottom = 1152.0
 color = Color(0.00392157, 0.0470588, 0.0705882, 0.882353)
 
-[node name="TopBar" type="HBoxContainer" parent="."]
-z_index = 1
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 39.0
-grow_horizontal = 2
-theme_override_constants/separation = 12
-
-[node name="Title" type="Label" parent="TopBar"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Wordmix"
-
-[node name="Spacer" type="Control" parent="TopBar"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="NewGame" type="Button" parent="TopBar"]
-layout_mode = 2
-text = "Novo Jogo"
-
 [node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 13
