@@ -1,4 +1,3 @@
-
 extends VBoxContainer
 
 signal letter_pressed(ch: String)
@@ -45,7 +44,7 @@ func _build_keys() -> void:
 
 	# Botão ENVIAR
 	var enter_btn: Button = _make_button("ENVIAR")
-	enter_btn.custom_minimum_size = Vector2(64, 48)
+	enter_btn.custom_minimum_size = Vector2(116, 48)
 	enter_btn.pressed.connect(func() -> void: emit_signal("enter_pressed"))
 	special_row.add_child(enter_btn)
 

@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Wordmix"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="uid://dnvojhvof7qld"
 config/features=PackedStringArray("4.4")
 
 [display]
 
 window/size/viewport_width=648
 window/size/viewport_height=1152
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [rendering]
 

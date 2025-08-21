@@ -1,4 +1,6 @@
 res://scenes/end_game.tscn
 res://scenes/Main.tscn
-res://scenes/end_game.gd
-res://scripts/Main.gd
+res://scripts/Keyboard.gd
+res://scenes/Start.tscn
+res://scenes/new_game_button.gd
+res://scenes/start.gd
