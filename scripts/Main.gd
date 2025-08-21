@@ -3,13 +3,12 @@ extends Control
 const WORD_SIZE: int = 5
 const MAX_TRIES: int = 6
 
-enum GameMode { DAILY, INFINITE }
+enum GameMode { INFINITE }
 
 @onready var grid: GridContainer = $VBox/Grid
 @onready var status_lbl: Label = $VBox/Status
 @onready var keyboard: Node = $VBox/Keyboard
-@onready var mode_btn: Button = $TopBar/ModeButton
-@onready var newgame_btn: Button = $TopBar/NewGame
+
 
 var answer: String = ""
 var row: int = 0
@@ -72,12 +71,8 @@ func _clear_children(container: Control) -> void:
 		child.queue_free()
 
 func _toggle_mode() -> void:
-	mode = GameMode.INFINITE if mode == GameMode.DAILY else GameMode.DAILY
+	mode = GameMode.INFINITE
 	_new_game()
-	_update_topbar()
-
-func _update_topbar() -> void:
-	mode_btn.text = "Modo: Diário" if mode == GameMode.DAILY else "Modo: Infinito"
 
 func _new_game() -> void:
 	row = 0
@@ -92,11 +87,11 @@ func _new_game() -> void:
 	_update_status()
 
 func _pick_answer() -> void:
-	if mode == GameMode.DAILY:
-		answer = _pick_daily_word()
-	else:
-		rng.randomize()
-		answer = words_map.keys()[rng.randi_range(0, words_map.keys().size()-1)]
+#	if mode == GameMode.DAILY:
+#		answer = _pick_daily_word()
+#	else:
+	rng.randomize()
+	answer = words_map.keys()[rng.randi_range(0, words_map.keys().size()-1)]
 
 func _update_status(text: String = "") -> void:
 	if text == "":

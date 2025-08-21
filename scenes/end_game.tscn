@@ -93,7 +93,7 @@ text = "novo jogo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NewGameButton2" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -1,3 +1,4 @@
 res://scenes/end_game.tscn
 res://scenes/Main.tscn
+res://scenes/end_game.gd
 res://scripts/Main.gd
