@@ -1,6 +1,3 @@
-res://scenes/Main.tscn
-res://scenes/Tile.tscn
 res://scenes/end_game.tscn
+res://scenes/Main.tscn
 res://scripts/Main.gd
-res://scenes/new_game_button.gd
-res://scenes/end_game.gd

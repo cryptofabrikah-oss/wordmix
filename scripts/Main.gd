@@ -100,8 +100,7 @@ func _pick_answer() -> void:
 
 func _update_status(text: String = "") -> void:
 	if text == "":
-		var base: String = "Adivinhe a palavra de %d letras. (%d tentativas)" % [WORD_SIZE, MAX_TRIES]
-		base += "  —  Modo Diário" if mode == GameMode.DAILY else "  —  Modo Infinito"
+		var base: String = "Adivinhe a palavra de 5 letras" 
 		status_lbl.text = base
 	else:
 		status_lbl.text = text
