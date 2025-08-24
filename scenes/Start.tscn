@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnvojhvof7qld"]
+[gd_scene load_steps=8 format=3 uid="uid://dnvojhvof7qld"]
 
 [ext_resource type="Texture2D" uid="uid://qt30568hb6n8" path="res://assets/start.jpeg" id="1_8t08e"]
 [ext_resource type="Script" uid="uid://b7obskxwllqbo" path="res://scenes/start.gd" id="1_j3bqk"]
+[ext_resource type="Texture2D" uid="uid://4qlt585wykj5" path="res://assets/market.png" id="3_d48hf"]
 [ext_resource type="Texture2D" uid="uid://bjhynlo37l6xy" path="res://assets/greenbutton.png" id="3_j3bqk"]
 [ext_resource type="Texture2D" uid="uid://buoau0684xqti" path="res://assets/rank.png" id="3_lynlw"]
 [ext_resource type="FontFile" uid="uid://dqsifpqqm5vmx" path="res://fonts/Pixeboy.ttf" id="4_yx83k"]
+[ext_resource type="Texture2D" uid="uid://cf0qka015qqnl" path="res://assets/inventory.png" id="5_yrm6t"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -13,6 +15,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j3bqk")
@@ -24,15 +28,25 @@ texture = ExtResource("1_8t08e")
 
 [node name="TopBar" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -290.0
+offset_left = -260.0
 offset_top = -542.0
-offset_right = 282.0
-offset_bottom = -425.0
-theme_override_constants/separation = 5
+offset_right = 264.0
+offset_bottom = -384.0
+theme_override_constants/separation = 25
+
+[node name="Market" type="Button" parent="TopBar"]
+layout_mode = 2
+icon = ExtResource("3_d48hf")
+flat = true
 
 [node name="Rank" type="Button" parent="TopBar"]
 layout_mode = 2
 icon = ExtResource("3_lynlw")
+flat = true
+
+[node name="Inventory" type="Button" parent="TopBar"]
+layout_mode = 2
+icon = ExtResource("5_yrm6t")
 flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

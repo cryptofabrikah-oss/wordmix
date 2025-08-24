@@ -1,7 +1,3 @@
-res://scenes/end_game.tscn
-res://scenes/Start.tscn
-res://scenes/Main.tscn
-res://scenes/Keyboard.tscn
 res://scenes/Tile.tscn
-res://scripts/Tile.gd
-res://scripts/Main.gd
+res://scenes/Main.tscn
+res://scenes/Start.tscn
