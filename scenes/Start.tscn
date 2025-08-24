@@ -28,28 +28,32 @@ position = Vector2(1, -66)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_8t08e")
 
-[node name="TopBar" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = -260.0
-offset_top = -542.0
-offset_right = 264.0
-offset_bottom = -384.0
+[node name="BottonBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -261.0
+offset_top = 381.0
+offset_right = 263.0
+offset_bottom = 539.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/separation = 25
 
-[node name="Market" type="Button" parent="TopBar"]
+[node name="Market" type="Button" parent="BottonBar"]
 layout_mode = 2
 icon = ExtResource("3_d48hf")
-flat = true
 
-[node name="Rank" type="Button" parent="TopBar"]
+[node name="Rank" type="Button" parent="BottonBar"]
 layout_mode = 2
 icon = ExtResource("3_lynlw")
-flat = true
 
-[node name="Inventory" type="Button" parent="TopBar"]
+[node name="Inventory" type="Button" parent="BottonBar"]
 layout_mode = 2
 icon = ExtResource("5_yrm6t")
-flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

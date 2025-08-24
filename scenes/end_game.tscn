@@ -19,6 +19,7 @@ size_flags_vertical = 4
 script = ExtResource("1_0py74")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -38.0
 offset_top = -60.0
 offset_right = 688.0
