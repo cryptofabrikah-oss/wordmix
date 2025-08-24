@@ -1,3 +1,5 @@
+TextureRect
+HBoxContainer
 Label
 CenterContainer
 VBoxContainer

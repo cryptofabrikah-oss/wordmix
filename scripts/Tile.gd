@@ -57,5 +57,5 @@ func _make_stylebox(color: Color) -> StyleBoxFlat:
 	sb.border_width_left = 2
 	sb.border_width_right = 2
 	sb.border_width_top = 2
-	sb.border_color = Color.hex(0x2C2C2CFF) # borda escura
+	sb.border_color = Color.hex(0xD9CFC4FF)
 	return sb

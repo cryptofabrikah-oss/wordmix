@@ -124,14 +124,14 @@ func _on_key_enter() -> void:
 		return
 	var guess: String = current_guess.to_upper()
 	if not words_map.keys().has(guess):
-		_flash_status("Palavra não existe.")
+		_flash_status("Palavra nao existe.")
 		#_clear()
 		return
 	_reveal_guess(words_map.get(guess))
 	current_guess = ""
 	col = 0
 	if guess == answer:
-		_update_status("Parabéns! Você acertou.")
+		_update_status("Parabens! Voce acertou.")
 		_lock_input()
 		return
 	row += 1
