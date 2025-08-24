@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://xyafmi8rpo0i"]
+[gd_scene load_steps=7 format=3 uid="uid://xyafmi8rpo0i"]
 
 [ext_resource type="Script" uid="uid://bowub5s73ysx3" path="res://scenes/end_game.gd" id="1_0py74"]
 [ext_resource type="FontFile" uid="uid://2ausagro6kfw" path="res://fonts/PressStart2P-Regular.ttf" id="2_0h6i1"]
 [ext_resource type="Texture2D" uid="uid://bfyc5mvo4ymbc" path="res://assets/box_endgame.svg" id="2_0py74"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_6lcay"]
 [ext_resource type="Texture2D" uid="uid://qyhuytr0yxo7" path="res://assets/newgame.png" id="2_uwdrl"]
 [ext_resource type="Texture2D" uid="uid://bxi03a0bwrwh4" path="res://Basic_GUI_Bundle/ButtonsText/PremadeButtons_XRed.png" id="4_5pifh"]
 
@@ -17,12 +18,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_0py74")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_right = 648.0
-offset_bottom = 1152.0
-color = Color(0.00392157, 0.0470588, 0.0705882, 0.623529)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -38.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 1201.0
+texture = ExtResource("2_6lcay")
 
 [node name="EndLabel" type="Label" parent="."]
 z_index = 2
