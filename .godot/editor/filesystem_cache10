@@ -2,7 +2,7 @@ ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1756008787
 export_presets.cfg::TextFile/TextFile::-1::1756001164::0::1::::<><><>0<>0<><>::
 README.md::TextFile/TextFile::-1::1756001164::0::1::::<><><>0<>0<><>::
-::res://assets/::1756008720
+::res://assets/::1756009386
 box_endgame.png::CompressedTexture2D/CompressedTexture2D::7826365495412537619::1756001164::1756001164::1::::<><><>0<>0<>c0050d2aa67e3ab82ba9488cebe9fb59<>res://.godot/imported/box_endgame.png-ebf4da07f7491138f4e29837a80363de.ctex::
 box_endgame.svg::CompressedTexture2D/CompressedTexture2D::2787085639180278756::1756001164::1756001164::1::::<><><>0<>0<>f41a5a9ea4bb86655db25b71ce2b27a2<>res://.godot/imported/box_endgame.svg-c997aed9bed382d63f159df79894d769.ctex::
 game.jpeg::CompressedTexture2D/CompressedTexture2D::2545833765863167424::1756004760::1756004788::1::::<><><>0<>0<>5f1d67d18802632d4b4e6189573eeca9<>res://.godot/imported/game.jpeg-ebd48d8b9fdaf97aa7ef1bfa74d4eba7.ctex::
@@ -10,6 +10,7 @@ greenbutton.png::CompressedTexture2D/CompressedTexture2D::3034051944560506746::1
 inventory.png::CompressedTexture2D/CompressedTexture2D::5176384399093340133::1756008188::1756008249::1::::<><><>0<>0<>0150790c5073916250920b7a7ae48324<>res://.godot/imported/inventory.png-83bb5941227a7793a033e5afa13d270b.ctex::
 market.png::CompressedTexture2D::2069209954644987032::1756008698::1756008787::1::::<><><>0<>0<>43e87b81c1ac117d29d40b932c3d5014<>res://.godot/imported/market.png-7ece907e699ed2f36f1fd16fab7da57a.ctex::
 newgame.png::CompressedTexture2D/CompressedTexture2D::1173028589851884296::1756001164::1756001164::1::::<><><>0<>0<>60672d1b13180722a115ec01c700771d<>res://.godot/imported/newgame.png-a960e6d3d9d6b03300c1ae870ce30070.ctex::
+player.png::CompressedTexture2D::7642009887159060639::1756009360::1756009397::1::::<><><>0<>0<>8c9fb0b2354b2e929fbc77ca8e581d98<>res://.godot/imported/player.png-be2216fcaabb5c62aa2466cd9a5726a8.ctex::
 rank.png::CompressedTexture2D/CompressedTexture2D::3819135923400419894::1756007924::1756007969::1::::<><><>0<>0<>91dbcca9b954ef8a5c32f3245822fdb4<>res://.godot/imported/rank.png-65b163e5fce18bec51675f35ae2b515b.ctex::
 start.jpeg::CompressedTexture2D/CompressedTexture2D::1163991021278977455::1756001511::1756001576::1::::<><><>0<>0<>c32ddc62cd136067d7398ec75c0bf361<>res://.godot/imported/start.jpeg-ee8ab8440ce335a4fed1d6697cfb1112.ctex::
 ::res://Basic_GUI_Bundle/::1756001164
@@ -566,15 +567,15 @@ words.txt::TextFile/TextFile::-1::1756001164::0::1::::<><><>0<>0<><>::
 8-BIT WONDER.TTF::FontFile/FontFile::6801326911679248040::1256665622::1756005527::1::::<><><>0<>0<>6f7363b0ced84883ab7be4a6a8a5b88e<>res://.godot/imported/8-BIT WONDER.TTF-5985096ae0069bcc3d116f1492e6b3ab.fontdata::
 Pixeboy.ttf::FontFile/FontFile::8319937827083882931::1583763736::1756003047::1::::<><><>0<>0<>cc973b5fdb438f397426fd01e7e9c557<>res://.godot/imported/Pixeboy.ttf-80cb91af7420a8531eb87e67769d5c4b.fontdata::
 PressStart2P-Regular.ttf::FontFile/FontFile::1896345272433659360::1748591472::1756003265::1::::<><><>0<>0<>aa5b4b5189c6ad854bb4c30cbe05d811<>res://.godot/imported/PressStart2P-Regular.ttf-c7d83f2c4bd295d4c960a93a703ae2b2.fontdata::
-::res://scenes/::1756008026
+::res://scenes/::1756009078
 end_game.gd::GDScript/GDScript::3415698535863403378::1756001164::0::1::::<>Control<><>0<>0<><>::
 end_game.tscn::PackedScene::1663898042903034298::1756005207::0::1::::<><><>0<>0<><>::uid://bowub5s73ysx3::::res://scenes/end_game.gd<>uid://2ausagro6kfw::::res://fonts/PressStart2P-Regular.ttf<>uid://bfyc5mvo4ymbc::::res://assets/box_endgame.svg<>uid://qyhuytr0yxo7::::res://assets/newgame.png<>uid://bxi03a0bwrwh4::::res://Basic_GUI_Bundle/ButtonsText/PremadeButtons_XRed.png
 Keyboard.tscn::PackedScene::3251101488219928638::1756005207::0::1::::<><><>0<>0<><>::uid://csh5oicaewwf2::::res://scripts/Keyboard.gd
-Main.tscn::PackedScene::1911518266307163432::1756008026::0::1::::<><><>0<>0<><>::uid://dx21vexej28fv::::res://scripts/Main.gd<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://bmk4fwq4qm5nm::::res://scenes/Keyboard.tscn<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
+Main.tscn::PackedScene::1911518266307163432::1756009078::0::1::::<><><>0<>0<><>::uid://dx21vexej28fv::::res://scripts/Main.gd<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://bmk4fwq4qm5nm::::res://scenes/Keyboard.tscn<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
 new_game_button.gd::GDScript/GDScript::5387533517963574708::1756001164::0::1::::<>RefCounted<><>0<>0<><>::
 start.gd::GDScript/GDScript::4661458391728761720::1756001164::0::1::::<>Control<><>0<>0<><>::
-Start.tscn::PackedScene::8115935462001251977::1756008026::0::1::::<><><>0<>0<><>::uid://qt30568hb6n8::::res://assets/start.jpeg<>uid://b7obskxwllqbo::::res://scenes/start.gd<>uid://bjhynlo37l6xy::::res://assets/greenbutton.png<>uid://buoau0684xqti::::res://assets/rank.png<>uid://dqsifpqqm5vmx::::res://fonts/Pixeboy.ttf
-Tile.tscn::PackedScene::8796503100036325712::1756008026::0::1::::<><><>0<>0<><>::uid://b06pcfylm2bfj::::res://scripts/Tile.gd
+Start.tscn::PackedScene::8115935462001251977::1756009078::0::1::::<><><>0<>0<><>::uid://qt30568hb6n8::::res://assets/start.jpeg<>uid://b7obskxwllqbo::::res://scenes/start.gd<>uid://4qlt585wykj5::::res://assets/market.png<>uid://bjhynlo37l6xy::::res://assets/greenbutton.png<>uid://buoau0684xqti::::res://assets/rank.png<>uid://dqsifpqqm5vmx::::res://fonts/Pixeboy.ttf<>uid://cf0qka015qqnl::::res://assets/inventory.png
+Tile.tscn::PackedScene::8796503100036325712::1756009078::0::1::::<><><>0<>0<><>::uid://b06pcfylm2bfj::::res://scripts/Tile.gd
 ::res://scripts/::1756005971
 Keyboard.gd::GDScript/GDScript::6052538131329511565::1756001164::0::1::::<>VBoxContainer<><>0<>0<><>::
 Main.gd::GDScript::8830960043416363243::1756005971::0::1::::<>Control<><>0<>0<><>::

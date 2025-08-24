@@ -1,7 +1,8 @@
+HBoxContainer
+VBoxContainer
+CenterContainer
+Label
+Sprite2D
 Button
 TextureRect
-HBoxContainer
-Label
-CenterContainer
-VBoxContainer
 ColorRect
