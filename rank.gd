@@ -3,11 +3,11 @@ extends Control
 @onready var ranking_list = $Mainpanel/playerslist
 
 var ranking_data = [
-	{"name": "Jogador1", "score": 15040, "avatar": "res://assets/avatar1.png"},
-	{"name": "Jogador2", "score": 12000, "avatar": "res://assets/avatar1.png"},
-	{"name": "Jogador3", "score": 9800,  "avatar": "res://assets/avatar1.png"},
-	{"name": "Jogador4", "score": 3500,  "avatar": "res://assets/avatar1.png"},
-	{"name": "Jogador5", "score": 3499,  "avatar": "res://assets/avatar1.png"},
+	{"name": "Luca", "score": 15040, "avatar": "res://assets/avatar1.png"},
+	{"name": "Hans", "score": 12000, "avatar": "res://assets/avatar1.png"},
+	{"name": "Hellsun", "score": 9800,  "avatar": "res://assets/avatar1.png"},
+	{"name": "Nick", "score": 3500,  "avatar": "res://assets/avatar1.png"},
+	{"name": "Inferno Gelado", "score": 3499,  "avatar": "res://assets/avatar1.png"},
 ]
 
 
