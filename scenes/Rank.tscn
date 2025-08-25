@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_g8rdk")
 
 [node name="Background2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -38.0
 offset_top = -60.0
 offset_right = 688.0
@@ -28,20 +29,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -275.0
-offset_top = -275.0
-offset_right = 275.0
-offset_bottom = 275.0
+offset_left = -300.0
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_60f4y")
 
 [node name="Weekly" type="Label" parent="Mainpanel"]
-layout_mode = 2
-offset_right = 550.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 90.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.861695, 0.644387, 0.0214721, 1)
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_fonts/font = ExtResource("2_4xgk3")
 theme_override_font_sizes/font_size = 25
 text = "RANKING SEMANAL"
