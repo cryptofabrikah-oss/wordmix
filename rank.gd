@@ -1,6 +1,7 @@
 extends Control
 
 @onready var ranking_list = $Mainpanel/playerslist
+@onready var backb = $Mainpanel/backb
 
 var ranking_data = [
 	{"name": "Luca", "score": 15040, "avatar": "res://assets/avatar1.png"},
@@ -13,9 +14,25 @@ var ranking_data = [
 ]
 
 
-func _ready():
-	var style = StyleBoxFlat.new()
 
+func _ready():
+	
+	
+	backb.pressed.connect(_on_back_pressed)
+	# Estilo do botão backb (igual às linhas)
+	var backb_style = StyleBoxFlat.new()
+	backb_style.bg_color = Color.hex(0x100101FF)      # fundo vermelho quase preto
+	backb_style.border_color = Color(1, 0.84, 0)   # borda dourada
+	backb_style.set_border_width_all(5)
+	backb_style.set_corner_radius_all(10)
+
+	# Aplica ao botão em todos os estados
+	backb.add_theme_stylebox_override("normal", backb_style)
+	backb.add_theme_stylebox_override("hover", backb_style)
+	backb.add_theme_stylebox_override("pressed", backb_style)
+	backb.add_theme_stylebox_override("disabled", backb_style)
+	
+	var style = StyleBoxFlat.new()
 	style.border_color = Color(1, 0.84, 0)   # borda dourada
 	style.set_border_width_all(5)              # bordas arredondadas
 	style.set_corner_radius_all(8)
@@ -24,7 +41,10 @@ func _ready():
 	$Mainpanel.add_theme_stylebox_override("panel", style)
 
 	update_ranking()
-	
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://scenes/Start.tscn")
+
 	
 func update_ranking():
 	# Limpa a lista antes de recriar
