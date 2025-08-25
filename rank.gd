@@ -2,15 +2,12 @@ extends Control
 
 @onready var ranking_list = $Mainpanel/playerslist
 
-# Exemplo de dados
 var ranking_data = [
 	{"name": "Jogador1", "score": 15040, "avatar": "res://assets/avatar1.png"},
-	{"name": "Jogador2", "score": 12000, "avatar": "res://assets/avatar2.png"},
-	{"name": "Jogador3", "score": 9800,  "avatar": "res://assets/avatar3.png"},
-	{"name": "Jogador4", "score": 3500,  "avatar": "res://assets/avatar4.png"},
-	{"name": "Jogador5", "score": 3499,  "avatar": "res://assets/avatar5.png"},
-	{"name": "Jogador6", "score": 3386,  "avatar": "res://assets/avatar6.png"},
-	{"name": "Jogador7", "score": 3100,  "avatar": "res://assets/avatar7.png"},
+	{"name": "Jogador2", "score": 12000, "avatar": "res://assets/avatar1.png"},
+	{"name": "Jogador3", "score": 9800,  "avatar": "res://assets/avatar1.png"},
+	{"name": "Jogador4", "score": 3500,  "avatar": "res://assets/avatar1.png"},
+	{"name": "Jogador5", "score": 3499,  "avatar": "res://assets/avatar1.png"},
 ]
 
 

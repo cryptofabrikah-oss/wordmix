@@ -1,9 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1756085023
+::res://::1756089503
 export_presets.cfg::TextFile::-1::1756084954::0::1::::<><><>0<>0<><>::
-rank.gd::GDScript::2190298895127772690::1756084954::0::1::::<>Control<><>0<>0<><>::
+rank.gd::GDScript::2190298895127772690::1756089503::0::1::::<>Control<><>0<>0<><>::
 README.md::TextFile::-1::1756084954::0::1::::<><><>0<>0<><>::
-::res://assets/::1756084954
+::res://assets/::1756089897
+avatar1.png::CompressedTexture2D::6945091782294061105::1756089858::1756089903::1::::<><><>0<>0<>77d339836dd16c749ca4763b7c5a4df9<>res://.godot/imported/avatar1.png-068e2c6067d01cc89a70aafc8c36b7e8.ctex::
 box_endgame.png::CompressedTexture2D/CompressedTexture2D::7826365495412537619::1756084954::1756084954::1::::<><><>0<>0<>c0050d2aa67e3ab82ba9488cebe9fb59<>res://.godot/imported/box_endgame.png-ebf4da07f7491138f4e29837a80363de.ctex::
 box_endgame.svg::CompressedTexture2D/CompressedTexture2D::2787085639180278756::1756084954::1756084954::1::::<><><>0<>0<>f41a5a9ea4bb86655db25b71ce2b27a2<>res://.godot/imported/box_endgame.svg-c997aed9bed382d63f159df79894d769.ctex::
 game.jpeg::CompressedTexture2D/CompressedTexture2D::2545833765863167424::1756084954::1756084954::1::::<><><>0<>0<>5f1d67d18802632d4b4e6189573eeca9<>res://.godot/imported/game.jpeg-ebd48d8b9fdaf97aa7ef1bfa74d4eba7.ctex::
@@ -568,19 +569,19 @@ words.txt::TextFile::-1::1756084954::0::1::::<><><>0<>0<><>::
 8-BIT WONDER.TTF::FontFile/FontFile::6801326911679248040::1756084954::1756084954::1::::<><><>0<>0<>6f7363b0ced84883ab7be4a6a8a5b88e<>res://.godot/imported/8-BIT WONDER.TTF-5985096ae0069bcc3d116f1492e6b3ab.fontdata::
 Pixeboy.ttf::FontFile/FontFile::8319937827083882931::1756084954::1756084954::1::::<><><>0<>0<>cc973b5fdb438f397426fd01e7e9c557<>res://.godot/imported/Pixeboy.ttf-80cb91af7420a8531eb87e67769d5c4b.fontdata::
 PressStart2P-Regular.ttf::FontFile/FontFile::1896345272433659360::1756084954::1756084954::1::::<><><>0<>0<>aa5b4b5189c6ad854bb4c30cbe05d811<>res://.godot/imported/PressStart2P-Regular.ttf-c7d83f2c4bd295d4c960a93a703ae2b2.fontdata::
-::res://scenes/::1756084954
+::res://scenes/::1756089512
 end_game.gd::GDScript::3415698535863403378::1756084954::0::1::::<>Control<><>0<>0<><>::
-end_game.tscn::PackedScene::1663898042903034298::1756084954::0::1::::<><><>0<>0<><>::uid://bowub5s73ysx3::::res://scenes/end_game.gd<>uid://2ausagro6kfw::::res://fonts/PressStart2P-Regular.ttf<>uid://bfyc5mvo4ymbc::::res://assets/box_endgame.svg<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://qyhuytr0yxo7::::res://assets/newgame.png<>uid://bxi03a0bwrwh4::::res://Basic_GUI_Bundle/ButtonsText/PremadeButtons_XRed.png
+end_game.tscn::PackedScene::1663898042903034298::1756089511::0::1::::<><><>0<>0<><>::uid://bowub5s73ysx3::::res://scenes/end_game.gd<>uid://2ausagro6kfw::::res://fonts/PressStart2P-Regular.ttf<>uid://bfyc5mvo4ymbc::::res://assets/box_endgame.svg<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://qyhuytr0yxo7::::res://assets/newgame.png<>uid://bxi03a0bwrwh4::::res://Basic_GUI_Bundle/ButtonsText/PremadeButtons_XRed.png
 Keyboard.tscn::PackedScene::3251101488219928638::1756084954::0::1::::<><><>0<>0<><>::uid://csh5oicaewwf2::::res://scripts/Keyboard.gd
-Main.tscn::PackedScene::1911518266307163432::1756084954::0::1::::<><><>0<>0<><>::uid://dx21vexej28fv::::res://scripts/Main.gd<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://bmk4fwq4qm5nm::::res://scenes/Keyboard.tscn<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
-Rank.tscn::PackedScene::4340176750802980871::1756084954::0::1::::<><><>0<>0<><>::uid://6g85xvq5yur7::::res://rank.gd<>uid://djrfdjjr5mvp8::::res://assets/box_endgame.png<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF<>uid://crbnt5dn6w7by::::res://themes/new_theme.tres<>uid://qt30568hb6n8::::res://assets/start.jpeg
+Main.tscn::PackedScene::1911518266307163432::1756089511::0::1::::<><><>0<>0<><>::uid://dx21vexej28fv::::res://scripts/Main.gd<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://bmk4fwq4qm5nm::::res://scenes/Keyboard.tscn<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
+Rank.tscn::PackedScene::4340176750802980871::1756089511::0::1::::<><><>0<>0<><>::uid://6g85xvq5yur7::::res://rank.gd<>uid://bcjhrl03jnufo::::res://assets/game.jpeg<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF<>uid://crbnt5dn6w7by::::res://themes/new_theme.tres
 start.gd::GDScript::4661458391728761720::1756084954::0::1::::<>Control<><>0<>0<><>::
-Start.tscn::PackedScene::8115935462001251977::1756084954::0::1::::<><><>0<>0<><>::uid://qt30568hb6n8::::res://assets/start.jpeg<>uid://b7obskxwllqbo::::res://scenes/start.gd<>uid://4qlt585wykj5::::res://assets/market.png<>uid://bjhynlo37l6xy::::res://assets/greenbutton.png<>uid://buoau0684xqti::::res://assets/rank.png<>uid://dqsifpqqm5vmx::::res://fonts/Pixeboy.ttf<>uid://cf0qka015qqnl::::res://assets/inventory.png<>uid://dg431y857bxyl::::res://assets/player.png<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
+Start.tscn::PackedScene::8115935462001251977::1756089512::0::1::::<><><>0<>0<><>::uid://qt30568hb6n8::::res://assets/start.jpeg<>uid://b7obskxwllqbo::::res://scenes/start.gd<>uid://4qlt585wykj5::::res://assets/market.png<>uid://bjhynlo37l6xy::::res://assets/greenbutton.png<>uid://buoau0684xqti::::res://assets/rank.png<>uid://dqsifpqqm5vmx::::res://fonts/Pixeboy.ttf<>uid://cf0qka015qqnl::::res://assets/inventory.png<>uid://dg431y857bxyl::::res://assets/player.png<>uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
 Tile.tscn::PackedScene::8796503100036325712::1756084954::0::1::::<><><>0<>0<><>::uid://b06pcfylm2bfj::::res://scripts/Tile.gd
 ::res://scripts/::1756084954
 Keyboard.gd::GDScript::6052538131329511565::1756084954::0::1::::<>VBoxContainer<><>0<>0<><>::
 Main.gd::GDScript::8830960043416363243::1756084954::0::1::::<>Control<><>0<>0<><>::
 new_game_button.gd::GDScript::5387533517963574708::1756084954::0::1::::<>RefCounted<><>0<>0<><>::
 Tile.gd::GDScript::4206052111708015407::1756084954::0::1::::<>Panel<><>0<>0<><>::
-::res://themes/::1756084954
-new_theme.tres::Theme::5968940918944875706::1756084954::0::1::::<><><>0<>0<><>::uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
+::res://themes/::1756087832
+new_theme.tres::Theme::5968940918944875706::1756087832::0::1::::<><><>0<>0<><>::uid://c35u4i2axngsu::::res://fonts/8-BIT WONDER.TTF
