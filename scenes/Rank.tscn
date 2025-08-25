@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b23ocu8soryq6"]
+[gd_scene load_steps=5 format=3 uid="uid://b23ocu8soryq6"]
 
 [ext_resource type="Script" uid="uid://6g85xvq5yur7" path="res://rank.gd" id="1_g8rdk"]
-[ext_resource type="Texture2D" uid="uid://djrfdjjr5mvp8" path="res://assets/box_endgame.png" id="2_2kw6p"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_2kw6p"]
 [ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="2_4xgk3"]
 [ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="2_60f4y"]
-[ext_resource type="Texture2D" uid="uid://qt30568hb6n8" path="res://assets/start.jpeg" id="3_barny"]
 
 [node name="Rank" type="Control"]
 layout_mode = 3
@@ -15,7 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g8rdk")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background2" type="TextureRect" parent="."]
+offset_left = -38.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 1201.0
+texture = ExtResource("2_2kw6p")
+
+[node name="Mainpanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,33 +36,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_60f4y")
 
-[node name="Start" type="Sprite2D" parent="Background"]
-position = Vector2(263, 226)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("3_barny")
-
-[node name="TextureRect" type="TextureRect" parent="Background"]
-layout_mode = 0
-offset_left = -44.0
-offset_top = -45.0
-offset_right = 585.0
-offset_bottom = 687.0
-texture = ExtResource("2_2kw6p")
-
-[node name="Weekly" type="Label" parent="Background"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
+[node name="Weekly" type="Label" parent="Mainpanel"]
+layout_mode = 2
+offset_right = 550.0
+offset_bottom = 105.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.861695, 0.644387, 0.0214721, 1)
 theme_override_fonts/font = ExtResource("2_4xgk3")
 theme_override_font_sizes/font_size = 25
 text = "RANKING SEMANAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="playerslist" type="VBoxContainer" parent="Background"]
+[node name="playerslist" type="VBoxContainer" parent="Mainpanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,28 +56,29 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -7.5
-offset_top = -11.5
+offset_top = -10.0
 offset_right = 7.5
-offset_bottom = 11.5
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="playerline" type="HBoxContainer" parent="Background/playerslist"]
+[node name="playerline" type="HBoxContainer" parent="Mainpanel/playerslist"]
 layout_mode = 2
 
-[node name="position" type="Label" parent="Background/playerslist/playerline"]
+[node name="position" type="Label" parent="Mainpanel/playerslist/playerline"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4xgk3")
+
+[node name="avatar" type="TextureRect" parent="Mainpanel/playerslist/playerline"]
 layout_mode = 2
 
-[node name="avatar" type="TextureRect" parent="Background/playerslist/playerline"]
+[node name="playername" type="Label" parent="Mainpanel/playerslist/playerline"]
 layout_mode = 2
 
-[node name="playername" type="Label" parent="Background/playerslist/playerline"]
+[node name="playerpoints" type="Label" parent="Mainpanel/playerslist/playerline"]
 layout_mode = 2
 
-[node name="playerpoints" type="Label" parent="Background/playerslist/playerline"]
-layout_mode = 2
-
-[node name="backbutton" type="Button" parent="Background"]
+[node name="backbutton" type="Button" parent="Mainpanel"]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
