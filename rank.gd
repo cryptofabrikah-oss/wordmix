@@ -13,11 +13,7 @@ var ranking_data = [
 
 ]
 
-
-
-func _ready():
-	
-	
+func _ready():	
 	backb.pressed.connect(_on_back_pressed)
 	# Estilo do botão backb (igual às linhas)
 	var backb_style = StyleBoxFlat.new()
@@ -58,8 +54,8 @@ func update_ranking():
 		# Cada linha vai ser um PanelContainer (pra poder ter fundo)
 		var row_panel = PanelContainer.new()
 		var style = StyleBoxFlat.new()
-		style.bg_color = Color.hex(0x100101FF) # fundo escuro semi-transparente
-		style.border_color = Color(1, 0.84, 0) # borda clara
+		style.bg_color = Color.hex(0x100101FF) # fundo escuro vermelho
+		style.border_color = Color(1, 0.84, 0) # borda dourada
 		style.set_corner_radius_all(10)
 		style.set_expand_margin_all(5)
 		style.set_border_width_all(5)
@@ -106,4 +102,3 @@ func update_ranking():
 
 func _make_lbl_style(lbl: Label, color: Color) -> void:
 	lbl.add_theme_color_override("font_color", color)
-	# você pode usar uma fonte pixel art carregada via .tres ou .ttf aqui
