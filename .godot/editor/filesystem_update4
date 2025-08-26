@@ -1,6 +1,4 @@
-res://scenes/end_game.tscn
-res://themes/new_theme.tres
-res://scenes/Main.tscn
-res://scenes/Rank.tscn
 res://scenes/Start.tscn
-res://rank.gd
+res://themes/new_theme.tres
+res://scenes/Rank.tscn
+res://scenes/start.gd
