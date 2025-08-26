@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://2h7ord5se505"]
+[gd_scene load_steps=7 format=3 uid="uid://2h7ord5se505"]
 
 [ext_resource type="Script" uid="uid://dx21vexej28fv" path="res://scripts/Main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://bmk4fwq4qm5nm" path="res://scenes/Keyboard.tscn" id="3"]
 [ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="3_rarhs"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="5_vcsgt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01mt"]
+bg_color = Color(0.0627451, 0.00392157, 0.00392157, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -48,3 +60,33 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 2
+
+[node name="ButtonPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -178.0
+offset_top = 30.0
+offset_right = -28.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c01mt")
+
+[node name="backbutton" type="Button" parent="ButtonPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -14.0
+offset_right = 64.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_vcsgt")
+text = "VOLTAR"
+flat = true

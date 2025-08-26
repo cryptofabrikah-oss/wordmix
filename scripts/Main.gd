@@ -8,6 +8,7 @@ enum GameMode { INFINITE }
 @onready var grid: GridContainer = $VBox/Grid
 @onready var status_lbl: Label = $VBox/Status
 @onready var keyboard: Node = $VBox/Keyboard
+@onready var backbutton: Button = $ButtonPanel/backbutton
 
 
 var answer: String = ""
@@ -21,6 +22,7 @@ var mode: GameMode = GameMode.INFINITE
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	backbutton.pressed.connect(_on_backbutton_pressed)
 	# Load words
 	var f: FileAccess = FileAccess.open("res://data/words.txt", FileAccess.READ)
 	var content: String = f.get_as_text()
@@ -192,3 +194,6 @@ func _flash_status(t: String) -> void:
 	status_lbl.modulate = Color(1, 0.7, 0.7, 1)
 	await get_tree().create_timer(0.35).timeout
 	status_lbl.modulate = Color(1, 1, 1, 1)
+	
+func _on_backbutton_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/Start.tscn")

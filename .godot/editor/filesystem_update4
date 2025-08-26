@@ -1,4 +1,5 @@
 res://scenes/Start.tscn
 res://themes/new_theme.tres
 res://scenes/Rank.tscn
-res://scenes/start.gd
+res://scenes/Main.tscn
+res://scripts/Main.gd
