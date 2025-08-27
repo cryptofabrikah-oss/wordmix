@@ -13,7 +13,6 @@ var ranking_data: Array = [
 	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
 ]
 
-
 func _ready():	
 	backb.pressed.connect(_on_back_pressed)
 	# Estilo do botão backb (igual às linhas)
@@ -35,9 +34,16 @@ func _ready():
 	style.set_corner_radius_all(8)
 	style.bg_color = Color8(40, 20, 0, 255)  # laranja escuro sólido
 	
+	ranking_data.sort_custom(func(a, b): return a["score"] > b["score"]) #organizar rank
+
+
 	$Mainpanel.add_theme_stylebox_override("panel", style)
 
 	update_ranking()
+	
+
+func compare_players(a, b) -> bool:
+	return a["score"] > b["score"]  # ordena do maior para o menor
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/Start.tscn")
