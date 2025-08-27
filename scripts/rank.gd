@@ -3,15 +3,16 @@ extends Control
 @onready var ranking_list = $Mainpanel/playerslist
 @onready var backb = $Mainpanel/backb
 
-var ranking_data = [
-	{"name": "Luca", "score": 15040, "avatar": "res://assets/avatar1.png"},
-	{"name": "Hans", "score": 12000, "avatar": "res://assets/avatar1.png"},
-	{"name": "Hellsun", "score": 9800,  "avatar": "res://assets/avatar1.png"},
-	{"name": "Nick", "score": 3500,  "avatar": "res://assets/avatar1.png"},
-	{"name": "Inferno G.", "score": 3499,  "avatar": "res://assets/avatar1.png"},
-	{"name": "Zoey", "score": 2567,  "avatar": "res://assets/avatar1.png"},
-
+# Estrutura inicial com 5 espaços vazios + 1 jogador (o player atual, por exemplo)
+var ranking_data: Array = [
+	{"name": Global.player_name, "score": Global.points, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
 ]
+
 
 func _ready():	
 	backb.pressed.connect(_on_back_pressed)
