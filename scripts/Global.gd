@@ -1,0 +1,12 @@
+extends Node
+
+var points: int = 0
+var gold: int = 0
+
+# Adiciona uma quantidade de pontos
+func add_points(amount: int) -> void:
+	points += amount
+
+# Adiciona uma quantidade de gold
+func add_gold(amount: int) -> void:
+	gold += amount

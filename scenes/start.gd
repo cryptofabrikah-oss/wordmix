@@ -3,6 +3,7 @@ extends Control
 # TopBar
 @onready var gold_line = $TopBar/gold_line
 @onready var crystal_line = $TopBar/crystal_line
+@onready var gold_num: Label = $TopBar/gold_line/gold_num  # Label que mostra o gold
 # CenterBox
 @onready var start_btn = $CenterBox/StartB
 @onready var playerselect_btn = $CenterBox/PLayerB
@@ -18,7 +19,17 @@ func _ready():
 	inventory_btn.pressed.connect(_on_inventory_pressed)
 	start_btn.pressed.connect(_on_start_pressed)
 	playerselect_btn.pressed.connect(_on_player_pressed)
+	
+	# Atualiza o gold ao abrir o menu
+	_update_gold()
 
+func _update_gold() -> void:
+	if gold_num:
+		gold_num.text = str(Global.gold)
+
+# Opcional: atualizar dinamicamente a cada frame
+# func _process(delta):
+#     _update_gold()
 
 # Novo jogo
 func _on_start_pressed():

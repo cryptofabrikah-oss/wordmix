@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://xyafmi8rpo0i"]
+[gd_scene load_steps=8 format=3 uid="uid://xyafmi8rpo0i"]
 
-[ext_resource type="Script" uid="uid://bowub5s73ysx3" path="res://scenes/end_game.gd" id="1_0py74"]
+[ext_resource type="Script" uid="uid://bowub5s73ysx3" path="res://scripts/end_game.gd" id="1_0py74"]
 [ext_resource type="FontFile" uid="uid://2ausagro6kfw" path="res://fonts/PressStart2P-Regular.ttf" id="2_0h6i1"]
 [ext_resource type="Texture2D" uid="uid://bfyc5mvo4ymbc" path="res://assets/box_endgame.svg" id="2_0py74"]
 [ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_6lcay"]
 [ext_resource type="Texture2D" uid="uid://qyhuytr0yxo7" path="res://assets/newgame.png" id="2_uwdrl"]
 [ext_resource type="Texture2D" uid="uid://bxi03a0bwrwh4" path="res://Basic_GUI_Bundle/ButtonsText/PremadeButtons_XRed.png" id="4_5pifh"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="7_plvne"]
 
 [node name="EndGame" type="Control"]
 layout_mode = 3
@@ -102,10 +103,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.0
+offset_left = 169.0
 offset_top = -225.0
-offset_right = 1146.0
-offset_bottom = 141.0
+offset_right = 472.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.22, 0.22)
@@ -113,3 +114,14 @@ icon = ExtResource("4_5pifh")
 flat = true
 icon_alignment = 2
 vertical_icon_alignment = 0
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 685.0
+offset_right = 451.0
+offset_bottom = 779.0
+theme = ExtResource("7_plvne")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1

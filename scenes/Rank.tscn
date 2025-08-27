@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b23ocu8soryq6"]
 
-[ext_resource type="Script" uid="uid://6g85xvq5yur7" path="res://rank.gd" id="1_g8rdk"]
+[ext_resource type="Script" uid="uid://6g85xvq5yur7" path="res://scripts/rank.gd" id="1_g8rdk"]
 [ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_2kw6p"]
 [ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="2_4xgk3"]
 [ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="2_60f4y"]
