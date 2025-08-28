@@ -1,9 +1,9 @@
-VBoxContainer
 Panel
-Label
-Button
+VBoxContainer
 HBoxContainer
+Label
 TextureRect
+Button
 PanelContainer
 CenterContainer
 Sprite2D

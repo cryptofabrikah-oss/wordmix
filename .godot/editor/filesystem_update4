@@ -1,0 +1,11 @@
+res://scenes/Rank.tscn
+res://themes/new_theme.tres
+res://data/words.json
+res://scenes/Start.tscn
+res://scenes/end_game.tscn
+res://scenes/Keyboard.tscn
+res://scenes/Tile.tscn
+res://scenes/Main.tscn
+res://scripts/end_game.gd
+res://scripts/Main.gd
+res://data/wordstest.json

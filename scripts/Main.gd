@@ -197,32 +197,36 @@ func _on_key_enter() -> void:
 
 	var gold_this_round: int = 0
 	var points_this_round: int = 0
-
+	var status_text: String = "" 
 	if guess == answer:
 		var TRIE = MAX_TRIES - row
 		points_this_round = 5 * TRIE
 		gold_this_round = 10 * TRIE
+		status_text = "Voce ganhou"
 		_update_status("Parabéns! Você acertou.")
-		_lock_input(points_this_round, gold_this_round)
+		_lock_input(points_this_round, gold_this_round, status_text)
 		return
 
 	row += 1
 	if row >= MAX_TRIES:
 		points_this_round = 5
 		gold_this_round = 10
+		status_text = "Voce falhou"
 		_update_status("Fim de jogo. A palavra era: %s" % answer)
-		_lock_input(points_this_round, gold_this_round)
+		_lock_input(points_this_round, gold_this_round, status_text)
 
 # ---------------------------
 # LOCK INPUT E END GAME
 # ---------------------------
-func _lock_input(points_this_round: int, gold_this_round: int) -> void:
+func _lock_input(points_this_round: int, gold_this_round: int, status_text: String) -> void:
 	Global.add_points(points_this_round)
 	Global.add_gold(gold_this_round)
 
 	var end_scene: Control = EndGameScene.instantiate()
+	end_scene.status_end = status_text 
 	end_scene.points_earned = points_this_round
 	end_scene.gold_earned = gold_this_round
+	
 
 	get_tree().root.add_child(end_scene)
 	get_tree().current_scene.queue_free()
