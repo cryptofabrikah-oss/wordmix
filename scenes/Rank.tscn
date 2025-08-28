@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://b23ocu8soryq6"]
+
+[ext_resource type="Script" uid="uid://6g85xvq5yur7" path="res://scripts/rank.gd" id="1_g8rdk"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_2kw6p"]
+[ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="2_4xgk3"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="2_60f4y"]
+
+[node name="Rank" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8rdk")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 1201.0
+texture = ExtResource("2_2kw6p")
+
+[node name="Mainpanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_60f4y")
+
+[node name="Weekly" type="Label" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.321569, 0.0156863, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_4xgk3")
+theme_override_font_sizes/font_size = 25
+text = "RANKING SEMANAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerslist" type="VBoxContainer" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -10.0
+offset_right = 7.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playerline" type="HBoxContainer" parent="Mainpanel/playerslist"]
+layout_mode = 2
+
+[node name="position" type="Label" parent="Mainpanel/playerslist/playerline"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4xgk3")
+
+[node name="avatar" type="TextureRect" parent="Mainpanel/playerslist/playerline"]
+layout_mode = 2
+
+[node name="playername" type="Label" parent="Mainpanel/playerslist/playerline"]
+layout_mode = 2
+
+[node name="playerpoints" type="Label" parent="Mainpanel/playerslist/playerline"]
+layout_mode = 2
+
+[node name="backb" type="Button" parent="Mainpanel"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "voltar"

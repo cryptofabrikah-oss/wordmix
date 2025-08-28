@@ -1,0 +1,111 @@
+extends Control
+
+@onready var ranking_list = $Mainpanel/playerslist
+@onready var backb = $Mainpanel/backb
+
+# Estrutura inicial com 5 espaços vazios + 1 jogador (o player atual, por exemplo)
+var ranking_data: Array = [
+	{"name": Global.player_name, "score": Global.points, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+	{"name": "", "score": 0, "avatar": "res://assets/avatar1.png"},
+]
+
+func _ready():	
+	backb.pressed.connect(_on_back_pressed)
+	# Estilo do botão backb (igual às linhas)
+	var backb_style = StyleBoxFlat.new()
+	backb_style.bg_color = Color.hex(0x100101FF)      # fundo vermelho quase preto
+	backb_style.border_color = Color(1, 0.84, 0)   # borda dourada
+	backb_style.set_border_width_all(5)
+	backb_style.set_corner_radius_all(10)
+
+	# Aplica ao botão em todos os estados
+	backb.add_theme_stylebox_override("normal", backb_style)
+	backb.add_theme_stylebox_override("hover", backb_style)
+	backb.add_theme_stylebox_override("pressed", backb_style)
+	backb.add_theme_stylebox_override("disabled", backb_style)
+	
+	var style = StyleBoxFlat.new()
+	style.border_color = Color(1, 0.84, 0)   # borda dourada
+	style.set_border_width_all(5)              # bordas arredondadas
+	style.set_corner_radius_all(8)
+	style.bg_color = Color8(40, 20, 0, 255)  # laranja escuro sólido
+	
+	ranking_data.sort_custom(func(a, b): return a["score"] > b["score"]) #organizar rank
+
+
+	$Mainpanel.add_theme_stylebox_override("panel", style)
+
+	update_ranking()
+	
+
+func compare_players(a, b) -> bool:
+	return a["score"] > b["score"]  # ordena do maior para o menor
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://scenes/Start.tscn")
+
+	
+func update_ranking():
+	# Limpa a lista antes de recriar
+	for child in ranking_list.get_children():
+		child.queue_free()
+	
+	ranking_list.add_theme_constant_override("separation", 30)
+	
+	var pos = 1
+	for player in ranking_data:
+		# Cada linha vai ser um PanelContainer (pra poder ter fundo)
+		var row_panel = PanelContainer.new()
+		var style = StyleBoxFlat.new()
+		style.bg_color = Color.hex(0x100101FF) # fundo escuro vermelho
+		style.border_color = Color(1, 0.84, 0) # borda dourada
+		style.set_corner_radius_all(10)
+		style.set_expand_margin_all(5)
+		style.set_border_width_all(5)
+		row_panel.add_theme_stylebox_override("panel", style)
+		
+		# HBox dentro do Panel
+		var row = HBoxContainer.new()
+		row.add_theme_constant_override("separation", 30)
+		
+		# Posição
+		var pos_lbl = Label.new()
+		pos_lbl.text = str(pos)
+		pos_lbl.custom_minimum_size = Vector2(40, 0)
+		pos_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		_make_lbl_style(pos_lbl, Color(1, 0.84, 0)) # dourado
+		row.add_child(pos_lbl)
+
+		# Avatar
+		var avatar = TextureRect.new()
+		avatar.texture = load(player["avatar"])
+		avatar.custom_minimum_size = Vector2(32, 32)
+		avatar.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		row.add_child(avatar)
+
+		# Nome
+		var name_lbl = Label.new()
+		name_lbl.text = player["name"]
+		name_lbl.custom_minimum_size = Vector2(230, 0)
+		_make_lbl_style(name_lbl, Color(1, 0.84, 0))
+		row.add_child(name_lbl)
+
+		# Score
+		var score_lbl = Label.new()
+		score_lbl.text = str(player["score"])
+		score_lbl.custom_minimum_size = Vector2(100, 0)
+		score_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		_make_lbl_style(score_lbl, Color(1, 0.84, 0))
+		row.add_child(score_lbl)
+
+		# Monta linha
+		row_panel.add_child(row)
+		ranking_list.add_child(row_panel)
+		pos += 1
+
+func _make_lbl_style(lbl: Label, color: Color) -> void:
+	lbl.add_theme_color_override("font_color", color)

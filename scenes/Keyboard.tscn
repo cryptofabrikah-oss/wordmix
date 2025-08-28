@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmk4fwq4qm5nm"]
+
+[ext_resource type="Script" uid="uid://csh5oicaewwf2" path="res://scripts/Keyboard.gd" id="1"]
+
+[node name="Keyboard" type="VBoxContainer"]
+mouse_filter = 0
+theme_override_constants/separation = 8
+script = ExtResource("1")

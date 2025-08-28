@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://2h7ord5se505"]
+
+[ext_resource type="Script" uid="uid://dx21vexej28fv" path="res://scripts/Main.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://bmk4fwq4qm5nm" path="res://scenes/Keyboard.tscn" id="3"]
+[ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="3_rarhs"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="5_vcsgt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcsgt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01mt"]
+bg_color = Color(0.0627451, 0.00392157, 0.00392157, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0bbpv")
+
+[node name="Game" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcsgt")
+
+[node name="Status" type="Label" parent="Game"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_top = 120.0
+offset_right = 0.5
+offset_bottom = 136.0
+grow_horizontal = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.888296, 0.797586, 0, 1)
+theme_override_fonts/font = ExtResource("3_rarhs")
+
+[node name="Grid" type="GridContainer" parent="Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -101.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 0
+
+[node name="Keyboard" parent="Game" instance=ExtResource("3")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="ButtonPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -188.0
+offset_top = 40.0
+offset_right = -38.0
+offset_bottom = 100.0
+grow_horizontal = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_c01mt")
+
+[node name="backbutton" type="Button" parent="ButtonPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -14.0
+offset_right = 64.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_vcsgt")
+text = "VOLTAR"
+flat = true

@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://xyafmi8rpo0i"]
+
+[ext_resource type="Script" uid="uid://bowub5s73ysx3" path="res://scripts/end_game.gd" id="1_0py74"]
+[ext_resource type="FontFile" uid="uid://2ausagro6kfw" path="res://fonts/PressStart2P-Regular.ttf" id="2_0h6i1"]
+[ext_resource type="Texture2D" uid="uid://bfyc5mvo4ymbc" path="res://assets/box_endgame.svg" id="2_0py74"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_6lcay"]
+[ext_resource type="Texture2D" uid="uid://qyhuytr0yxo7" path="res://assets/newgame.png" id="2_uwdrl"]
+[ext_resource type="Texture2D" uid="uid://bxi03a0bwrwh4" path="res://Basic_GUI_Bundle/ButtonsText/PremadeButtons_XRed.png" id="4_5pifh"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="7_plvne"]
+
+[node name="EndGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0py74")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 1201.0
+texture = ExtResource("2_6lcay")
+
+[node name="EndLabel" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -47.5
+offset_right = 203.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0h6i1")
+theme_override_font_sizes/font_size = 34
+text = "Você ganhou!"
+
+[node name="EndPopup" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = 247.0
+offset_right = 1778.0
+offset_bottom = 1768.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-0.33, -0.33)
+texture = ExtResource("2_0py74")
+
+[node name="NewGameButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = 12.0
+offset_right = 1045.0
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+icon = ExtResource("2_uwdrl")
+flat = true
+
+[node name="Label" type="Label" parent="NewGameButton"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0h6i1")
+theme_override_font_sizes/font_size = 100
+text = "novo jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 169.0
+offset_top = -225.0
+offset_right = 472.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+icon = ExtResource("4_5pifh")
+flat = true
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 685.0
+offset_right = 451.0
+offset_bottom = 779.0
+theme = ExtResource("7_plvne")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
