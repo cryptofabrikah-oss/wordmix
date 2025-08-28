@@ -1,3 +1,4 @@
+class_name Tile
 extends Panel
 
 @export var letter: String = ""
@@ -9,7 +10,7 @@ var label: Label
 
 func _ready():
 	label = Label.new()
-	custom_minimum_size = Vector2(90, 90)
+	custom_minimum_size = Vector2(100, 100)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.size_flags_vertical = Control.SIZE_EXPAND_FILL

@@ -1,3 +1,4 @@
+class_name Keyboard
 extends VBoxContainer
 
 signal letter_pressed(ch: String)
@@ -11,6 +12,7 @@ const ROWS: Array[String] = [
 ]
 
 var letter_state: Dictionary = {}
+const SCALE := 1.5
 
 func _ready() -> void:
 	_build_keys()
@@ -18,16 +20,13 @@ func _ready() -> void:
 func _build_keys() -> void:
 	_clear_children(self)
 
-	# VBoxContainer principal (teclado)
 	self.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	self.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 
-
-	# Construir linhas de letras
 	for row_str in ROWS:
 		var h: HBoxContainer = HBoxContainer.new()
 		h.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-		h.add_theme_constant_override("separation", 2)
+		h.add_theme_constant_override("separation", 5 * SCALE)
 		add_child(h)
 
 		for ch in row_str:
@@ -36,24 +35,21 @@ func _build_keys() -> void:
 			b.pressed.connect(func() -> void: emit_signal("letter_pressed", btn_ch))
 			h.add_child(b)
 
-	# Linha de botões especiais (ENVIAR e BACKSPACE)
+	# Linha de botões especiais
 	var special_row: HBoxContainer = HBoxContainer.new()
 	special_row.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	special_row.add_theme_constant_override("separation", 5)
+	special_row.add_theme_constant_override("separation", 5 * SCALE)
 	add_child(special_row)
 
-	# Botão ENVIAR
 	var enter_btn: Button = _make_button("ENVIAR")
-	enter_btn.custom_minimum_size = Vector2(116, 48)
+	enter_btn.custom_minimum_size = Vector2(116 * SCALE, 48 * SCALE)
 	enter_btn.pressed.connect(func() -> void: emit_signal("enter_pressed"))
 	special_row.add_child(enter_btn)
 
-	# Botão BACKSPACE
 	var back_btn: Button = _make_button("⌫")
-	back_btn.custom_minimum_size = Vector2(64, 48)
+	back_btn.custom_minimum_size = Vector2(64 * SCALE, 48 * SCALE)
 	back_btn.pressed.connect(func() -> void: emit_signal("backspace_pressed"))
 	special_row.add_child(back_btn)
-
 
 func _clear_children(container: Control) -> void:
 	for child in container.get_children():
@@ -62,15 +58,15 @@ func _clear_children(container: Control) -> void:
 func _make_button(t: String) -> Button:
 	var b: Button = Button.new()
 	b.text = t
-	b.custom_minimum_size = Vector2(32, 48)
+	b.custom_minimum_size = Vector2(32 * SCALE, 48 * SCALE)
 	b.focus_mode = Control.FOCUS_NONE
-	b.add_theme_font_size_override("font_size", 18)
+	b.add_theme_font_size_override("font_size", 18 * SCALE)
 	_update_button_style(b, "empty")
 	return b
 
 func set_letter_state(ch: String, state: String) -> void:
 	ch = ch.to_upper()
-	var rank: Dictionary = {"empty":0, "absent":1, "present":2, "correct":3}
+	var rank: Dictionary = {"empty":0,"absent":1,"present":2,"correct":3}
 	var prev: String = letter_state.get(ch, "empty")
 	if rank[state] > rank[prev]:
 		letter_state[ch] = state
@@ -88,7 +84,7 @@ func _refresh_colors() -> void:
 					var text: String = btn.text
 					var ch: String = text if text.length() == 1 else ""
 					var st: String = letter_state.get(ch, "empty")
-					_update_button_style(btn as Button, st)
+					_update_button_style(btn, st)
 
 func _update_button_style(b: Button, state: String) -> void:
 	var col: Color = Color.hex(0x3a3b3eff)
@@ -104,13 +100,13 @@ func _update_button_style(b: Button, state: String) -> void:
 func _make_btn_style(b: Button, color: Color) -> void:
 	var sb: StyleBoxFlat = StyleBoxFlat.new()
 	sb.bg_color = color
-	sb.corner_radius_bottom_left = 10
-	sb.corner_radius_bottom_right = 10
-	sb.corner_radius_top_left = 10
-	sb.corner_radius_top_right = 10
-	sb.border_width_bottom = 2
-	sb.border_width_top = 2
-	sb.border_width_left = 2
-	sb.border_width_right = 2
+	sb.corner_radius_bottom_left = 10 * SCALE
+	sb.corner_radius_bottom_right = 10 * SCALE
+	sb.corner_radius_top_left = 10 * SCALE
+	sb.corner_radius_top_right = 10 * SCALE
+	sb.border_width_bottom = 2 * SCALE
+	sb.border_width_top = 2 * SCALE
+	sb.border_width_left = 2 * SCALE
+	sb.border_width_right = 2 * SCALE
 	sb.border_color = Color.hex(0x0f1012ff)
 	b.add_theme_stylebox_override("normal", sb)

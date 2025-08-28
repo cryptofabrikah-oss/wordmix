@@ -1,8 +1,8 @@
-Label
+VBoxContainer
 Panel
+Label
 Button
 HBoxContainer
-VBoxContainer
 TextureRect
 PanelContainer
 CenterContainer

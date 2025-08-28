@@ -1,8 +1,10 @@
 res://scenes/Start.tscn
 res://themes/new_theme.tres
+res://scripts/Keyboard.gd
 res://scenes/Rank.tscn
 res://scenes/Main.tscn
 res://scenes/end_game.tscn
-res://scripts/Global.gd
-res://scripts/rank.gd
-res://scenes/start.gd
+res://scenes/Keyboard.tscn
+res://scenes/Tile.tscn
+res://scripts/Main.gd
+res://scripts/Tile.gd
