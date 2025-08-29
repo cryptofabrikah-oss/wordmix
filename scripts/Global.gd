@@ -3,7 +3,7 @@ extends Node
 var points: int = 0
 var gold: int = 0
 var crystal: int = 0
-var player_name: String = "Hell Sun"
+var player_name: String = "Kah"
 
 
 # Adiciona uma quantidade de pontos

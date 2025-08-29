@@ -12,7 +12,7 @@ const ROWS: Array[String] = [
 ]
 
 var letter_state: Dictionary = {}
-const SCALE := 1.5
+const SCALE := 1.6
 
 func _ready() -> void:
 	_build_keys()
@@ -47,7 +47,7 @@ func _build_keys() -> void:
 	special_row.add_child(enter_btn)
 
 	var back_btn: Button = _make_button("⌫")
-	back_btn.custom_minimum_size = Vector2(64 * SCALE, 48 * SCALE)
+	back_btn.custom_minimum_size = Vector2(70 * SCALE, 48 * SCALE)
 	back_btn.pressed.connect(func() -> void: emit_signal("backspace_pressed"))
 	special_row.add_child(back_btn)
 
@@ -58,7 +58,7 @@ func _clear_children(container: Control) -> void:
 func _make_button(t: String) -> Button:
 	var b: Button = Button.new()
 	b.text = t
-	b.custom_minimum_size = Vector2(32 * SCALE, 48 * SCALE)
+	b.custom_minimum_size = Vector2(38 * SCALE, 38 * SCALE)
 	b.focus_mode = Control.FOCUS_NONE
 	b.add_theme_font_size_override("font_size", 18 * SCALE)
 	_update_button_style(b, "empty")
