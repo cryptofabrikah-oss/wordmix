@@ -38,6 +38,8 @@ google-services.json
 service-account-*.json
 *-service-account.json
 firebase-config.json
+firebase_config_template.gd
+firebase_config_template.gd.uid
 
 # Variáveis de Ambiente
 .env
@@ -118,6 +120,7 @@ application-*.properties
 *.conf.local
 *.yaml.local
 *.yml.local
+firebase_config_secure.gd
 
 # Provedores de Nuvem (AWS, GCP, Azure, etc.)
 # AWS
