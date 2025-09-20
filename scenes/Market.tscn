@@ -1,0 +1,423 @@
+[gd_scene load_steps=11 format=3 uid="uid://djhhvqfx3kenp"]
+
+[ext_resource type="Script" uid="uid://bbsk26sip375n" path="res://scripts/Market.gd" id="1_market"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_background"]
+[ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="2_font"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://bkqj5n2cg45sd" path="res://assets/mago.svg" id="3_mago"]
+[ext_resource type="Texture2D" uid="uid://dcht665x1n4h2" path="res://assets/arqueiro.svg" id="4_arqueiro"]
+[ext_resource type="Texture2D" uid="uid://dt64lj2gpb6ri" path="res://assets/mercador.svg" id="5_mercador"]
+[ext_resource type="Texture2D" uid="uid://bugfv2skxig2e" path="res://assets/guerreiro.svg" id="6_guerreiro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0.2, 0.01, 0.05, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+bg_color = Color(0, 0, 0, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Market" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_market")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_background")
+
+[node name="Mainpanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -436.0
+offset_right = 313.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="Title" type="Label" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.321569, 0.0156863, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 25
+text = "MARKETPLACE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopBar" type="HBoxContainer" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 80.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="LeftSpacer" type="Control" parent="Mainpanel/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resources" type="HBoxContainer" parent="Mainpanel/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="GoldContainer" type="Panel" parent="Mainpanel/TopBar/Resources"]
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="GoldHBox" type="HBoxContainer" parent="Mainpanel/TopBar/Resources/GoldContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="GoldIcon" type="Label" parent="Mainpanel/TopBar/Resources/GoldContainer/GoldHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "🪙"
+vertical_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="Mainpanel/TopBar/Resources/GoldContainer/GoldHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "0"
+vertical_alignment = 1
+
+[node name="CrystalContainer" type="Panel" parent="Mainpanel/TopBar/Resources"]
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="CrystalHBox" type="HBoxContainer" parent="Mainpanel/TopBar/Resources/CrystalContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="CrystalIcon" type="Label" parent="Mainpanel/TopBar/Resources/CrystalContainer/CrystalHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "💎"
+vertical_alignment = 1
+
+[node name="CrystalLabel" type="Label" parent="Mainpanel/TopBar/Resources/CrystalContainer/CrystalHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "0"
+vertical_alignment = 1
+
+[node name="RightSpacer" type="Control" parent="Mainpanel/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 130.0
+offset_right = -20.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterGrid" type="GridContainer" parent="Mainpanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="MagoCard" type="Panel" parent="Mainpanel/ScrollContainer/CharacterGrid"]
+custom_minimum_size = Vector2(280, 350)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="CharacterImage" type="TextureRect" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_mago")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MAGO"
+horizontal_alignment = 1
+
+[node name="AbilityDescription" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Revela uma letra aleatoria da palavra no inicio do jogo"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PriceContainer" type="HBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="CrystalPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer/PriceContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "💎 50"
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer"]
+layout_mode = 2
+text = "COMPRAR"
+
+[node name="ArqueiroCard" type="Panel" parent="Mainpanel/ScrollContainer/CharacterGrid"]
+custom_minimum_size = Vector2(280, 350)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="CharacterImage" type="TextureRect" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_arqueiro")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ARQUEIRO"
+horizontal_alignment = 1
+
+[node name="AbilityDescription" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Ganha uma tentativa extra para adivinhar a palavra"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PriceContainer" type="HBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="GoldPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer/PriceContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🪙 200"
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer"]
+layout_mode = 2
+text = "COMPRAR"
+
+[node name="MercadorCard" type="Panel" parent="Mainpanel/ScrollContainer/CharacterGrid"]
+custom_minimum_size = Vector2(280, 350)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="CharacterImage" type="TextureRect" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_mercador")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MERCADOR"
+horizontal_alignment = 1
+
+[node name="AbilityDescription" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Ganha 100% mais gold em cada partida"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PriceContainer" type="HBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="GoldPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer/PriceContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🪙 300"
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer"]
+layout_mode = 2
+text = "COMPRAR"
+
+[node name="GuerreiroCard" type="Panel" parent="Mainpanel/ScrollContainer/CharacterGrid"]
+custom_minimum_size = Vector2(280, 350)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="CharacterImage" type="TextureRect" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_guerreiro")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "GUERREIRO"
+horizontal_alignment = 1
+
+[node name="AbilityDescription" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Ganha 50% mais pontos em cada partida"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PriceContainer" type="HBoxContainer" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="CrystalPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer/PriceContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "💎 75"
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer"]
+layout_mode = 2
+text = "COMPRAR"
+
+[node name="BackButton" type="Button" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.5
+offset_top = -67.0
+offset_right = 85.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "VOLTAR"

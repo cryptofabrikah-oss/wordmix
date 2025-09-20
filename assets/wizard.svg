@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wizard Avatar -->
+  <!-- Robe -->
+  <path d="M70 120 Q100 110 130 120 L135 180 Q100 185 65 180 Z" fill="#4B0082"/>
+  <!-- Body -->
+  <rect x="80" y="120" width="40" height="50" fill="#4B0082"/>
+  <!-- Head -->
+  <circle cx="100" cy="80" r="25" fill="#FDBCB4"/>
+  <!-- Wizard Hat -->
+  <path d="M85 65 Q100 30 115 65 Q100 70 85 65" fill="#4B0082"/>
+  <circle cx="108" cy="45" r="4" fill="#FFD700"/>
+  <!-- Beard -->
+  <path d="M85 90 Q100 105 115 90 Q100 100 85 90" fill="#DCDCDC"/>
+  <!-- Eyes -->
+  <circle cx="92" cy="78" r="3" fill="#000"/>
+  <circle cx="108" cy="78" r="3" fill="#000"/>
+  <!-- Staff -->
+  <rect x="140" y="80" width="6" height="80" fill="#8B4513"/>
+  <!-- Crystal on staff -->
+  <circle cx="143" cy="75" r="8" fill="#00FFFF"/>
+  <circle cx="143" cy="75" r="5" fill="#FFFFFF" opacity="0.7"/>
+  <!-- Arms -->
+  <circle cx="65" cy="130" r="10" fill="#FDBCB4"/>
+  <circle cx="135" cy="130" r="10" fill="#FDBCB4"/>
+  <!-- Legs -->
+  <rect x="88" y="170" width="10" height="30" fill="#4B0082"/>
+  <rect x="102" y="170" width="10" height="30" fill="#4B0082"/>
+  <!-- Magic sparkles -->
+  <circle cx="60" cy="100" r="2" fill="#FFD700"/>
+  <circle cx="150" cy="110" r="2" fill="#FFD700"/>
+  <circle cx="55" cy="140" r="2" fill="#00FFFF"/>
+</svg>

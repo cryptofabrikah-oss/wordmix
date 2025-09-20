@@ -1,0 +1,55 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#f0f0f0" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Wizard hat -->
+  <path d="M32 8 L38 25 L26 25 Z" fill="#4b0082" stroke="#301934" stroke-width="1"/>
+  <circle cx="32" cy="8" r="2" fill="#ffd700"/>
+  <ellipse cx="32" cy="25" rx="8" ry="2" fill="#4b0082"/>
+  
+  <!-- Stars on hat -->
+  <polygon points="30,15 30.5,16.5 32,16.5 31,17.5 31.5,19 30,18 28.5,19 29,17.5 28,16.5 29.5,16.5" fill="#ffd700"/>
+  <polygon points="34,12 34.3,12.8 35,12.8 34.5,13.3 34.7,14 34,13.6 33.3,14 33.5,13.3 33,12.8 33.7,12.8" fill="#ffd700"/>
+  
+  <!-- Face -->
+  <circle cx="32" cy="32" r="10" fill="#fdbcb4"/>
+  
+  <!-- Beard -->
+  <path d="M25 38 Q32 45 39 38 Q39 42 32 44 Q25 42 25 38" fill="#d3d3d3"/>
+  
+  <!-- Eyes -->
+  <circle cx="28" cy="30" r="2" fill="#333"/>
+  <circle cx="36" cy="30" r="2" fill="#333"/>
+  <circle cx="28.5" cy="29.5" r="0.5" fill="#fff"/>
+  <circle cx="36.5" cy="29.5" r="0.5" fill="#fff"/>
+  
+  <!-- Nose -->
+  <ellipse cx="32" cy="33" rx="1" ry="1.5" fill="#f4a460"/>
+  
+  <!-- Mouth (hidden by beard) -->
+  <path d="M29 36 Q32 37 35 36" stroke="#333" stroke-width="0.5" fill="none"/>
+  
+  <!-- Robe -->
+  <rect x="24" y="42" width="16" height="18" rx="2" fill="#4b0082"/>
+  
+  <!-- Robe decorations -->
+  <circle cx="28" cy="48" r="1" fill="#ffd700"/>
+  <circle cx="32" cy="52" r="1" fill="#ffd700"/>
+  <circle cx="36" cy="48" r="1" fill="#ffd700"/>
+  
+  <!-- Magic wand -->
+  <line x1="18" y1="45" x2="22" y2="41" stroke="#8b4513" stroke-width="2"/>
+  <polygon points="22,41 23,40 24,41 23,42" fill="#ffd700"/>
+  
+  <!-- Magic sparkles -->
+  <polygon points="16,38 16.3,39 17,39 16.5,39.5 16.7,40 16,39.7 15.3,40 15.5,39.5 15,39 15.7,39" fill="#00ffff"/>
+  <polygon points="45,35 45.2,35.5 45.7,35.5 45.4,35.8 45.5,36.3 45,36 44.5,36.3 44.6,35.8 44.3,35.5 44.8,35.5" fill="#ff69b4"/>
+  
+  <!-- Arms -->
+  <ellipse cx="20" cy="50" rx="3" ry="6" fill="#fdbcb4"/>
+  <ellipse cx="44" cy="50" rx="3" ry="6" fill="#fdbcb4"/>
+  
+  <!-- Hands -->
+  <circle cx="20" cy="53" r="2.5" fill="#fdbcb4"/>
+  <circle cx="44" cy="53" r="2.5" fill="#fdbcb4"/>
+</svg>

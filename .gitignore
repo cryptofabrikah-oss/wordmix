@@ -1,0 +1,168 @@
+# Godot 4+ specific files
+.godot/
+.import/
+
+# Godot-specific ignores
+export.cfg
+export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# ========================================
+# DADOS SENSÍVEIS - NUNCA COMMITAR
+# ========================================
+
+# Firebase e Service Accounts
+firebase-service-account.json
+firebase-adminsdk-*.json
+google-services.json
+service-account-*.json
+*-service-account.json
+firebase-config.json
+
+# Variáveis de Ambiente
+.env
+.env.*
+.envrc
+.environment
+environment.json
+environment.*.json
+
+# Chaves de API e Tokens
+*api_key*
+*apikey*
+*api-key*
+*access_token*
+*access-token*
+*secret_key*
+*secret-key*
+*private_key*
+*private-key*
+*auth_token*
+*auth-token*
+*bearer_token*
+*bearer-token*
+*jwt_secret*
+*jwt-secret*
+*oauth_*
+*oauth-*
+*client_secret*
+*client-secret*
+*app_secret*
+*app-secret*
+
+# Certificados e Chaves Criptográficas
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cert
+*.cer
+*.der
+*.jks
+*.keystore
+*.truststore
+*.ppk
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.pub
+
+# Credenciais de Banco de Dados
+database.json
+db_config.json
+*database*config*
+*db*credentials*
+*connection*string*
+*.sqlite-wal
+*.sqlite-shm
+
+# Arquivos de Configuração Sensíveis
+config.json
+config.*.json
+settings.json
+settings.*.json
+secrets.json
+secrets.*.json
+credentials.json
+credentials.*.json
+*config*secret*
+*config*credential*
+*settings*secret*
+*settings*credential*
+application.properties
+application-*.properties
+*.properties.local
+*.ini.local
+*.conf.local
+*.yaml.local
+*.yml.local
+
+# Provedores de Nuvem (AWS, GCP, Azure, etc.)
+# AWS
+.aws/
+aws-credentials
+*aws*config*
+*aws*credential*
+*.aws
+
+# Google Cloud Platform
+gcloud/
+*gcp*config*
+*gcp*credential*
+*google*cloud*config*
+*google*cloud*credential*
+*.gcp
+
+# Microsoft Azure
+.azure/
+*azure*config*
+*azure*credential*
+*.azure
+
+# Outros Provedores
+*heroku*config*
+*digitalocean*config*
+*linode*config*
+*vultr*config*
+
+# Arquivos de Backup que podem conter dados sensíveis
+*.backup
+*.bak.json
+*backup*config*
+*backup*credential*
+
+# Build files
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+
+# APK files
+*.apk
+*.idsig
+
+# Logs
+*.log

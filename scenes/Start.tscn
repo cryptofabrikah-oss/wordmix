@@ -1,0 +1,289 @@
+[gd_scene load_steps=15 format=3 uid="uid://dnvojhvof7qld"]
+
+[ext_resource type="Texture2D" uid="uid://qt30568hb6n8" path="res://assets/start.jpeg" id="1_8t08e"]
+[ext_resource type="Script" uid="uid://b7obskxwllqbo" path="res://scripts/start.gd" id="1_j3bqk"]
+[ext_resource type="Texture2D" uid="uid://brapl3hd4onl" path="res://assets/gold.png" id="2_nqh5h"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="2_yud8w"]
+[ext_resource type="Texture2D" uid="uid://4qlt585wykj5" path="res://assets/market.png" id="3_d48hf"]
+[ext_resource type="Texture2D" uid="uid://cutihao70cdxk" path="res://assets/crystal.png" id="3_ea00n"]
+[ext_resource type="Texture2D" uid="uid://bjhynlo37l6xy" path="res://assets/greenbutton.png" id="3_j3bqk"]
+[ext_resource type="Texture2D" uid="uid://buoau0684xqti" path="res://assets/rank.png" id="3_lynlw"]
+[ext_resource type="Texture2D" uid="uid://cf0qka015qqnl" path="res://assets/inventory.png" id="5_yrm6t"]
+[ext_resource type="Texture2D" uid="uid://dwg6phj5w6eu4" path="res://assets/leftarrow.png" id="6_yud8w"]
+[ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="8_q7y7s"]
+[ext_resource type="Texture2D" uid="uid://cwbcyjkmwdmmu" path="res://assets/rightarrow.png" id="8_ugrxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugrxo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 0.823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arrow"]
+bg_color = Color(0.0235294, 0.0352941, 0.0784314, 0.772549)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0941176, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j3bqk")
+
+[node name="Start" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_8t08e")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -294.0
+offset_top = 75.0
+offset_right = 292.0
+offset_bottom = 147.0
+grow_horizontal = 2
+theme = ExtResource("2_yud8w")
+theme_override_constants/separation = 30
+
+[node name="gold_line" type="Panel" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ugrxo")
+
+[node name="gold_icon" type="TextureRect" parent="TopBar/gold_line"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 64.0
+grow_vertical = 2
+texture = ExtResource("2_nqh5h")
+stretch_mode = 3
+
+[node name="gold_num" type="Label" parent="TopBar/gold_line"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="crystal_line" type="Panel" parent="TopBar"]
+custom_minimum_size = Vector2(169, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ugrxo")
+
+[node name="crystal_icon" type="TextureRect" parent="TopBar/crystal_line"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 64.0
+grow_vertical = 2
+texture = ExtResource("3_ea00n")
+stretch_mode = 3
+
+[node name="crystal_num" type="Label" parent="TopBar/crystal_line"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ad" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+
+[node name="CharacterPanel" type="Panel" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -299.0
+offset_right = 150.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_arrow")
+
+[node name="CharacterContainer" type="HBoxContainer" parent="CharacterPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -178.0
+offset_right = 232.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LeftArrow" type="Button" parent="CharacterPanel/CharacterContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(1, 1, 0.5, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_arrow")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_arrow")
+theme_override_styles/normal = SubResource("StyleBoxFlat_arrow")
+icon = ExtResource("6_yud8w")
+flat = true
+
+[node name="CenterBox" type="VBoxContainer" parent="CharacterPanel/CharacterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="PlayerSprite" type="TextureRect" parent="CharacterPanel/CharacterContainer/CenterBox"]
+custom_minimum_size = Vector2(240, 320)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerNameContainer" type="VBoxContainer" parent="CharacterPanel/CharacterContainer/CenterBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerName" type="Label" parent="CharacterPanel/CharacterContainer/CenterBox/PlayerNameContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.74902, 0, 1)
+theme_override_fonts/font = ExtResource("8_q7y7s")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="PlayerNameInput" type="LineEdit" parent="CharacterPanel/CharacterContainer/CenterBox/PlayerNameContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_q7y7s")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Digite seu nome..."
+alignment = 1
+max_length = 15
+
+[node name="ConfirmNameButton" type="Button" parent="CharacterPanel/CharacterContainer/CenterBox/PlayerNameContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_q7y7s")
+theme_override_font_sizes/font_size = 16
+text = "CONFIRMAR"
+
+[node name="RightArrow" type="Button" parent="CharacterPanel/CharacterContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(1, 1, 0.5, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_arrow")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_arrow")
+theme_override_styles/normal = SubResource("StyleBoxFlat_arrow")
+icon = ExtResource("8_ugrxo")
+flat = true
+
+[node name="StartB" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = 192.0
+offset_right = 131.5
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+keep_pressed_outside = true
+icon = ExtResource("3_j3bqk")
+flat = true
+icon_alignment = 1
+
+[node name="Novo" type="Label" parent="StartB"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_q7y7s")
+theme_override_font_sizes/font_size = 20
+text = "novo Jogo
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottonBar" type="HBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -222.0
+offset_right = 262.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="Market" type="Button" parent="BottonBar"]
+layout_mode = 2
+icon = ExtResource("3_d48hf")
+
+[node name="Rank" type="Button" parent="BottonBar"]
+layout_mode = 2
+icon = ExtResource("3_lynlw")
+
+[node name="Inventory" type="Button" parent="BottonBar"]
+layout_mode = 2
+icon = ExtResource("5_yrm6t")

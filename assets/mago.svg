@@ -1,0 +1,49 @@
+<svg width="208" height="256" viewBox="0 0 208 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mago - Revela uma letra da palavra -->
+  <!-- Cabeça -->
+  <circle cx="104" cy="88" r="36" fill="#FDBCB4" stroke="#E09E87" stroke-width="3"/>
+  
+  <!-- Chapéu de mago pontudo -->
+  <path d="M68 72 Q104 20 140 72 Q128 60 104 32 Q80 60 68 72" fill="#4B0082"/>
+  <circle cx="116" cy="40" r="6" fill="#FFD700"/>
+  
+  <!-- Barba grisalha -->
+  <path d="M86 112 Q104 128 122 112 Q122 120 104 136 Q86 120 86 112" fill="#C0C0C0"/>
+  
+  <!-- Olhos sábios -->
+  <circle cx="88" cy="80" r="6" fill="#333"/>
+  <circle cx="120" cy="80" r="6" fill="#333"/>
+  <circle cx="88" cy="78" r="1.5" fill="#FFF"/>
+  <circle cx="120" cy="78" r="1.5" fill="#FFF"/>
+  
+  <!-- Nariz -->
+  <circle cx="104" cy="92" r="3" fill="#E09E87"/>
+  
+  <!-- Corpo - Túnica roxa de mago -->
+  <rect x="80" y="136" width="48" height="80" fill="#4B0082" rx="6"/>
+  
+  <!-- Detalhes dourados na túnica -->
+  <rect x="98" y="144" width="12" height="64" fill="#FFD700" rx="3"/>
+  <circle cx="104" cy="160" r="6" fill="#FFD700"/>
+  
+  <!-- Braços -->
+  <rect x="56" y="144" width="18" height="48" fill="#FDBCB4" rx="9"/>
+  <rect x="134" y="144" width="18" height="48" fill="#FDBCB4" rx="9"/>
+  
+  <!-- Mãos -->
+  <circle cx="65" cy="200" r="9" fill="#FDBCB4"/>
+  <circle cx="143" cy="200" r="9" fill="#FDBCB4"/>
+  
+  <!-- Cajado mágico -->
+  <rect x="51" y="140" width="6" height="80" fill="#8B4513"/>
+  <circle cx="54" cy="140" r="9" fill="#FFD700"/>
+  <path d="M45 128 Q54 116 63 128 Q54 140 45 128" fill="#00FFFF"/>
+  
+  <!-- Pernas -->
+  <rect x="86" y="216" width="15" height="32" fill="#654321" rx="6"/>
+  <rect x="107" y="216" width="15" height="32" fill="#654321" rx="6"/>
+  
+  <!-- Pés -->
+  <ellipse cx="93.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+  <ellipse cx="114.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+</svg>

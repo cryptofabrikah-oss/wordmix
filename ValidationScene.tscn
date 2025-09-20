@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm8kdhwu5eosc"]
+
+[ext_resource type="Script" uid="uid://by8vrlbl41cmi" path="res://scripts/PersistenceValidator.gd" id="1_0hdqx"]
+
+[sub_resource type="GDScript" id="GDScript_1"]
+script/source = "extends Control
+
+@onready var validator = $PersistenceValidator
+@onready var status_label = $UI/StatusLabel
+@onready var instructions = $UI/Instructions
+
+func _ready():
+	validator.validation_completed.connect(_on_validation_completed)
+
+func _on_validation_completed(success: bool, report: String):
+	if success:
+		status_label.text = \"✅ Status: Validação APROVADA - Sistema funcionando corretamente!\"
+		status_label.modulate = Color.GREEN
+		instructions.append_text(\"\\n\\n[color=green][b]🎉 SUCESSO![/b][/color]\\nO sistema de persistência está funcionando. Não haverá mais criação de novos jogadores a cada inicialização.\")
+	else:
+		status_label.text = \"❌ Status: Validação FALHOU - Problemas detectados\"
+		status_label.modulate = Color.RED
+		instructions.append_text(\"\\n\\n[color=red][b]⚠️ PROBLEMAS DETECTADOS![/b][/color]\\nVerifique o console para detalhes dos problemas encontrados.\")
+
+func _on_clear_console():
+	print(\"\\n\" * 50)
+	print(\"Console limpo - Execute nova validação se necessário\")
+"
+
+[node name="ValidationScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_1")
+
+[node name="PersistenceValidator" type="Node" parent="."]
+script = ExtResource("1_0hdqx")
+
+[node name="UI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 2
+text = "🧪 VALIDADOR DO SISTEMA DE PERSISTÊNCIA WORDMIX"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI"]
+layout_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Instruções:[/b]
+1. Execute esta cena no editor Godot
+2. Os testes serão executados automaticamente
+3. Verifique o console e a interface para resultados
+4. Se todos os testes passarem, o sistema está funcionando corretamente
+
+[color=green][b]✅ Sistema funcionando:[/b][/color] Não haverá mais criação de novos jogadores
+[color=red][b]❌ Sistema com problemas:[/b][/color] Verifique os logs para detalhes"
+
+[node name="HSeparator2" type="HSeparator" parent="UI"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 2
+
+[node name="ValidateButton" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🔄 Executar Validação"
+
+[node name="ClearButton" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🗑️ Limpar Console"
+
+[node name="HSeparator3" type="HSeparator" parent="UI"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="UI"]
+layout_mode = 2
+text = "Status: Aguardando validação..."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="UI/ButtonContainer/ValidateButton" to="PersistenceValidator" method="validate_system"]
+[connection signal="pressed" from="UI/ButtonContainer/ClearButton" to="." method="_on_clear_console"]

@@ -1,0 +1,57 @@
+<svg width="208" height="256" viewBox="0 0 208 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arqueiro - Ganha uma tentativa extra -->
+  <!-- Cabeça -->
+  <circle cx="104" cy="80" r="36" fill="#FDBCB4" stroke="#E09E87" stroke-width="3"/>
+  
+  <!-- Capuz verde -->
+  <path d="M68 60 Q104 32 140 60 Q140 48 104 40 Q68 48 68 60" fill="#228B22"/>
+  <path d="M68 60 Q104 48 140 60 L140 100 Q104 88 68 100 Z" fill="#228B22"/>
+  
+  <!-- Olhos alertas -->
+  <circle cx="88" cy="72" r="6" fill="#333"/>
+  <circle cx="120" cy="72" r="6" fill="#333"/>
+  <circle cx="88" cy="70" r="1.5" fill="#FFF"/>
+  <circle cx="120" cy="70" r="1.5" fill="#FFF"/>
+  
+  <!-- Nariz -->
+  <circle cx="104" cy="84" r="3" fill="#E09E87"/>
+  
+  <!-- Boca -->
+  <path d="M92 96 Q104 104 116 96" stroke="#333" stroke-width="3" fill="none"/>
+  
+  <!-- Corpo - Armadura de couro verde -->
+  <rect x="80" y="128" width="48" height="80" fill="#556B2F" rx="6"/>
+  
+  <!-- Detalhes da armadura -->
+  <rect x="88" y="136" width="24" height="64" fill="#228B22" rx="3"/>
+  
+  <!-- Braços -->
+  <rect x="56" y="136" width="18" height="48" fill="#FDBCB4" rx="9"/>
+  <rect x="134" y="144" width="18" height="40" fill="#FDBCB4" rx="9"/>
+  
+  <!-- Mãos -->
+  <circle cx="65" cy="192" r="9" fill="#FDBCB4"/>
+  <circle cx="143" cy="192" r="9" fill="#FDBCB4"/>
+  
+  <!-- Arco -->
+  <path d="M47 120 Q36 160 47 200" stroke="#8B4513" stroke-width="6" fill="none"/>
+  <line x1="47" y1="120" x2="47" y2="200" stroke="#654321" stroke-width="3"/>
+  
+  <!-- Flecha -->
+  <line x1="47" y1="160" x2="77" y2="160" stroke="#8B4513" stroke-width="6"/>
+  <path d="M77 152 L89 160 L77 168 Z" fill="#C0C0C0"/>
+  <path d="M47 152 L35 160 L47 168 Z" fill="#228B22"/>
+  
+  <!-- Aljava nas costas -->
+  <rect x="128" y="112" width="12" height="48" fill="#8B4513" rx="6"/>
+  <line x1="131" y1="112" x2="131" y2="128" stroke="#654321" stroke-width="3"/>
+  <line x1="137" y1="112" x2="137" y2="128" stroke="#654321" stroke-width="3"/>
+  
+  <!-- Pernas -->
+  <rect x="86" y="208" width="15" height="40" fill="#654321" rx="6"/>
+  <rect x="107" y="208" width="15" height="40" fill="#654321" rx="6"/>
+  
+  <!-- Pés -->
+  <ellipse cx="93.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+  <ellipse cx="114.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+</svg>
