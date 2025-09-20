@@ -4,3 +4,7 @@ res://scenes/Main.tscn
 res://scenes/Market.tscn
 res://scenes/Start.tscn
 res://scenes/PlayerNameEntry.tscn
+res://firebase_config_template.gd
+res://google-services.json
+res://firebase_config.gd
+res://scripts/Global.gd

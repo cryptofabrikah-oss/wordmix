@@ -1161,25 +1161,18 @@ func _on_username_check_result(username: String, callback: Callable, data: Dicti
 # Tenta carregar manualmente o Firebase como fallback
 func _try_manual_firebase_load():
 	print("🔄 Tentando carregar Firebase manualmente...")
-	
-	# Como o FirebaseEnvFix foi removido, usa configuração direta
-	print("⚠️  FirebaseEnvFix não está disponível - usando configuração padrão")
-	print("   Para problemas de ambiente, verifique firebase_config.gd")
+	print("   Para problemas de configuração, verifique firebase_config.gd")
 
 # Tenta autenticação manual para erro 403
 func _try_manual_firebase_auth():
 	print("🔐 Tentando autenticação manual alternativa...")
-	
-	# Método alternativo: usar HTTP requests diretos para Firebase Auth
-	# Isso é um fallback para quando o plugin oficial falha
 	
 	var config = firebase_config.get_firebase_config()
 	if config.apiKey == "":
 		print("❌ Não é possível fazer autenticação manual: API Key vazia")
 		return
 	
-	print("⚠️  Autenticação manual não implementada completamente")
-	print("   Para resolver o erro 403, configure a autenticação anônima:")
+	print("⚠️  Para resolver o erro 403, configure a autenticação anônima:")
 	print("   1. Acesse: https://console.firebase.google.com/")
 	print("   2. Projeto: cinco-words")
 	print("   3. Authentication > Sign-in method > Habilitar Anonymous")

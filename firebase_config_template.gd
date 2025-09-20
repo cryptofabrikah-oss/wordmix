@@ -1,38 +1,52 @@
 extends Node
 
-# Template de configuração segura do Firebase
-# Use variáveis de ambiente para armazenar credenciais sensíveis
+# Configuração segura do Firebase para jogos mobile
+# Usa apenas client-side authentication - SEM service account necessário!
+# Perfeito para jogos que precisam de auth + realtime database
 
 class_name FirebaseConfigTemplate
 
-# Configuração do Firebase usando variáveis de ambiente
-var config = {
-	"apiKey": OS.get_environment("FIREBASE_API_KEY"),
-	"authDomain": OS.get_environment("FIREBASE_AUTH_DOMAIN"),
-	"databaseURL": OS.get_environment("FIREBASE_DATABASE_URL"),
-	"projectId": OS.get_environment("FIREBASE_PROJECT_ID"),
-	"storageBucket": OS.get_environment("FIREBASE_STORAGE_BUCKET"),
-	"messagingSenderId": OS.get_environment("FIREBASE_MESSAGING_SENDER_ID"),
-	"appId": OS.get_environment("FIREBASE_APP_ID")
-}
-
-# Service Account (para uso server-side)
-var service_account = {
-	"type": "service_account",
-	"project_id": OS.get_environment("FIREBASE_PROJECT_ID"),
-	"private_key_id": OS.get_environment("FIREBASE_PRIVATE_KEY_ID"),
-	"private_key": OS.get_environment("FIREBASE_PRIVATE_KEY"),
-	"client_email": OS.get_environment("FIREBASE_CLIENT_EMAIL"),
-	"client_id": OS.get_environment("FIREBASE_CLIENT_ID"),
-	"auth_uri": "https://accounts.google.com/o/oauth2/auth",
-	"token_uri": "https://oauth2.googleapis.com/token",
-	"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-	"client_x509_cert_url": OS.get_environment("FIREBASE_CLIENT_X509_CERT_URL"),
-	"universe_domain": "googleapis.com"
-}
+# Configuração completa do Firebase usando variáveis de ambiente
+# APENAS o que é necessário para jogos mobile
+func get_firebase_config() -> Dictionary:
+	return {
+		# Configurações essenciais (obrigatórias)
+		"apiKey": OS.get_environment("FIREBASE_API_KEY"),
+		"authDomain": OS.get_environment("FIREBASE_AUTH_DOMAIN"), 
+		"databaseURL": OS.get_environment("FIREBASE_DATABASE_URL"),
+		"projectId": OS.get_environment("FIREBASE_PROJECT_ID"),
+		"storageBucket": OS.get_environment("FIREBASE_STORAGE_BUCKET"),
+		"messagingSenderId": OS.get_environment("FIREBASE_MESSAGING_SENDER_ID"),
+		"appId": OS.get_environment("FIREBASE_APP_ID"),
+		
+		# Configurações opcionais
+		"measurementId": OS.get_environment("FIREBASE_MEASUREMENT_ID"), # Para Analytics
+		"cacheLocation": "user://firebase_cache/",
+		
+		# Configurações de emuladores (desenvolvimento)
+		"emulators": {
+			"ports": {
+				"authentication": "",
+				"realtimeDatabase": ""
+			}
+		},
+		
+		# Workarounds conhecidos
+		"workarounds": {
+			"database_connection_closed_issue": false
+		},
+		
+		# Provedores de autenticação (se usar OAuth)
+		"auth_providers": {
+			"facebook_id": OS.get_environment("FIREBASE_FACEBOOK_ID"),
+			"google_id": OS.get_environment("FIREBASE_GOOGLE_ID"),
+			"twitter_id": OS.get_environment("FIREBASE_TWITTER_ID"),
+			"github_id": OS.get_environment("FIREBASE_GITHUB_ID")
+		}
+	}
 
 func _ready():
-	# Verifica se todas as variáveis de ambiente necessárias estão definidas
+	# Verifica se as variáveis essenciais estão definidas
 	validate_environment_variables()
 
 func validate_environment_variables():

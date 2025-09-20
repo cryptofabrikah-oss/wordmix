@@ -27,17 +27,23 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Firebase and Security files
+# Firebase and Security files - NUNCA COMMITAR
 firebase-service-account.json
 firebase-adminsdk-*.json
 google-services.json
+service-account-*.json
+*-service-account.json
+firebase-config.json
 .env
 .env.local
 .env.production
+.env.development
 *.key
 *.pem
 *.p12
 *.pfx
+*.crt
+*.cert
 
 # Build files
 *.tmp
