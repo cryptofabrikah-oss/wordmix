@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://b23ocu8soryq6"]
+
+[ext_resource type="Script" uid="uid://6g85xvq5yur7" path="res://scripts/rank.gd" id="1_g8rdk"]
+[ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_2kw6p"]
+[ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="2_4xgk3"]
+[ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="2_60f4y"]
+
+[node name="Rank" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8rdk")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2kw6p")
+
+[node name="Mainpanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.0
+offset_top = -400.0
+offset_right = 309.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_60f4y")
+
+[node name="Weekly" type="Label" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.321569, 0.0156863, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_4xgk3")
+theme_override_font_sizes/font_size = 25
+text = "RANKING SEMANAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLeft" type="Label" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 80.0
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.3, 0.7, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_4xgk3")
+theme_override_font_sizes/font_size = 16
+text = "Tempo restante: 3d 12h 45m"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rewards" type="Label" parent="Mainpanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 110.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_fonts/font = ExtResource("2_4xgk3")
+theme_override_font_sizes/font_size = 10
+text = "1º: 500💎 | 2º: 300💎 | 3º: 200💎 | 4º-50º: 50💎"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Mainpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 150.0
+offset_right = -35.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playerslist" type="VBoxContainer" parent="Mainpanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="backb" type="Button" parent="Mainpanel"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "voltar"
+
+[node name="Mainpanel_playerslist#playerline" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Mainpanel_playerslist_playerline#position" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4xgk3")
+
+[node name="Mainpanel_playerslist_playerline#avatar" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Mainpanel_playerslist_playerline#playername" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Mainpanel_playerslist_playerline#playerpoints" type="Label" parent="."]
+layout_mode = 2

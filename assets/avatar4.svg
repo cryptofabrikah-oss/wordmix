@@ -1,0 +1,75 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#f0f0f0" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Face -->
+  <circle cx="32" cy="28" r="10" fill="#fdbcb4"/>
+  
+  <!-- Hair -->
+  <path d="M22 20 Q32 16 42 20 Q42 24 32 22 Q22 24 22 20" fill="#daa520"/>
+  
+  <!-- Merchant hat -->
+  <ellipse cx="32" cy="20" rx="10" ry="4" fill="#8b4513"/>
+  <rect x="24" y="18" width="16" height="4" fill="#8b4513"/>
+  <ellipse cx="32" cy="18" rx="8" ry="2" fill="#a0522d"/>
+  
+  <!-- Eyes -->
+  <circle cx="28" cy="26" r="2" fill="#333"/>
+  <circle cx="36" cy="26" r="2" fill="#333"/>
+  <circle cx="28.5" cy="25.5" r="0.5" fill="#fff"/>
+  <circle cx="36.5" cy="25.5" r="0.5" fill="#fff"/>
+  
+  <!-- Mustache -->
+  <path d="M28 30 Q32 32 36 30" stroke="#8b4513" stroke-width="2" fill="none"/>
+  
+  <!-- Nose -->
+  <ellipse cx="32" cy="29" rx="1" ry="1.5" fill="#f4a460"/>
+  
+  <!-- Mouth -->
+  <path d="M29 33 Q32 35 35 33" stroke="#333" stroke-width="1" fill="none"/>
+  
+  <!-- Body/Vest -->
+  <rect x="24" y="38" width="16" height="22" rx="2" fill="#8b0000"/>
+  
+  <!-- Rich vest with gold trim -->
+  <rect x="25" y="39" width="14" height="20" rx="1" fill="#dc143c" stroke="#ffd700" stroke-width="2"/>
+  
+  <!-- Gold buttons -->
+  <circle cx="32" cy="43" r="1" fill="#ffd700"/>
+  <circle cx="32" cy="47" r="1" fill="#ffd700"/>
+  <circle cx="32" cy="51" r="1" fill="#ffd700"/>
+  
+  <!-- Money bag -->
+  <ellipse cx="18" cy="50" rx="4" ry="6" fill="#8b4513" stroke="#654321" stroke-width="1"/>
+  <rect x="16" y="44" width="4" height="3" fill="#654321"/>
+  <line x1="17" y1="44" x2="17" y2="46" stroke="#333" stroke-width="1"/>
+  <line x1="19" y1="44" x2="19" y2="46" stroke="#333" stroke-width="1"/>
+  
+  <!-- Gold coins spilling -->
+  <circle cx="14" cy="52" r="1.5" fill="#ffd700" stroke="#daa520" stroke-width="0.5"/>
+  <circle cx="22" cy="54" r="1.5" fill="#ffd700" stroke="#daa520" stroke-width="0.5"/>
+  <circle cx="16" cy="56" r="1.5" fill="#ffd700" stroke="#daa520" stroke-width="0.5"/>
+  
+  <!-- Coin symbols -->
+  <text x="14" y="53" font-family="Arial" font-size="2" fill="#8b4513" text-anchor="middle">$</text>
+  <text x="22" y="55" font-family="Arial" font-size="2" fill="#8b4513" text-anchor="middle">$</text>
+  <text x="16" y="57" font-family="Arial" font-size="2" fill="#8b4513" text-anchor="middle">$</text>
+  
+  <!-- Scale/Balance -->
+  <line x1="44" y1="42" x2="44" y2="50" stroke="#333" stroke-width="2"/>
+  <line x1="40" y1="44" x2="48" y2="44" stroke="#333" stroke-width="1"/>
+  <rect x="39" y="43" width="3" height="2" fill="#8b4513"/>
+  <rect x="46" y="43" width="3" height="2" fill="#8b4513"/>
+  
+  <!-- Arms -->
+  <ellipse cx="20" cy="48" rx="3" ry="6" fill="#fdbcb4"/>
+  <ellipse cx="44" cy="48" rx="3" ry="6" fill="#fdbcb4"/>
+  
+  <!-- Hands -->
+  <circle cx="20" cy="52" r="2.5" fill="#fdbcb4"/>
+  <circle cx="44" cy="52" r="2.5" fill="#fdbcb4"/>
+  
+  <!-- Gold coin in hand -->
+  <circle cx="44" cy="52" r="2" fill="#ffd700" stroke="#daa520" stroke-width="0.5"/>
+  <text x="44" y="53" font-family="Arial" font-size="2" fill="#8b4513" text-anchor="middle">$</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg width="208" height="256" viewBox="0 0 208 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Aprendiz - Personagem padrão baseado no Luca -->
+  <!-- Cabeça -->
+  <circle cx="104" cy="80" r="36" fill="#FDBCB4" stroke="#E09E87" stroke-width="3"/>
+  
+  <!-- Cabelo castanho -->
+  <path d="M68 60 Q104 32 140 60 Q140 48 104 40 Q68 48 68 60" fill="#8B4513"/>
+  
+  <!-- Olhos -->
+  <circle cx="88" cy="72" r="6" fill="#333"/>
+  <circle cx="120" cy="72" r="6" fill="#333"/>
+  <circle cx="88" cy="69" r="1.5" fill="#FFF"/>
+  <circle cx="120" cy="69" r="1.5" fill="#FFF"/>
+  
+  <!-- Nariz -->
+  <circle cx="104" cy="88" r="3" fill="#E09E87"/>
+  
+  <!-- Boca -->
+  <path d="M92 100 Q104 108 116 100" stroke="#333" stroke-width="3" fill="none"/>
+  
+  <!-- Corpo - Túnica simples de aprendiz -->
+  <rect x="80" y="116" width="48" height="60" fill="#8B7355" rx="6"/>
+  
+  <!-- Braços -->
+  <rect x="62" y="124" width="18" height="36" fill="#FDBCB4" rx="9"/>
+  <rect x="128" y="124" width="18" height="36" fill="#FDBCB4" rx="9"/>
+  
+  <!-- Mãos -->
+  <circle cx="71" cy="172" r="9" fill="#FDBCB4"/>
+  <circle cx="137" cy="172" r="9" fill="#FDBCB4"/>
+  
+  <!-- Pernas -->
+  <rect x="86" y="176" width="15" height="30" fill="#654321" rx="6"/>
+  <rect x="107" y="176" width="15" height="30" fill="#654321" rx="6"/>
+  
+  <!-- Pés -->
+  <ellipse cx="93.5" cy="214" rx="9" ry="6" fill="#8B4513"/>
+  <ellipse cx="114.5" cy="214" rx="9" ry="6" fill="#8B4513"/>
+  
+  <!-- Livro na mão (símbolo de aprendiz) -->
+  <rect x="59" y="160" width="24" height="18" fill="#8B4513" rx="3"/>
+  <rect x="62" y="163" width="18" height="12" fill="#DEB887" rx="1.5"/>
+</svg>

@@ -1,0 +1,10 @@
+Panel
+VBoxContainer
+HBoxContainer
+Label
+TextureRect
+Button
+PanelContainer
+CenterContainer
+Sprite2D
+ColorRect

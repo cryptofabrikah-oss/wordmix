@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqxvyh8n4c5ys"]
+
+[ext_resource type="Script" path="res://FirebaseConnectionDiagnostic.gd" id="1_0m8n4"]
+
+[node name="FirebaseConnectionDiagnostic" type="Node"]
+script = ExtResource("1_0m8n4")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvn8y4x5qr2ks"]
+
+[ext_resource type="Script" path="res://scripts/firebase_api_test.gd" id="1_8k5l2"]
+
+[node name="FirebaseApiTest" type="Node"]
+script = ExtResource("1_8k5l2")

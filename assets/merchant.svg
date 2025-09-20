@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Merchant Avatar -->
+  <!-- Body -->
+  <rect x="75" y="120" width="50" height="60" fill="#8B0000"/>
+  <!-- Rich robe -->
+  <rect x="70" y="115" width="60" height="55" fill="#800080" rx="8"/>
+  <!-- Gold trim -->
+  <rect x="70" y="115" width="60" height="8" fill="#FFD700"/>
+  <rect x="70" y="162" width="60" height="8" fill="#FFD700"/>
+  <!-- Head -->
+  <circle cx="100" cy="80" r="25" fill="#FDBCB4"/>
+  <!-- Hat -->
+  <path d="M80 65 Q100 45 120 65 Q110 70 100 68 Q90 70 80 65" fill="#8B0000"/>
+  <circle cx="100" cy="55" r="5" fill="#FFD700"/>
+  <!-- Mustache -->
+  <path d="M90 85 Q100 88 110 85" stroke="#8B4513" stroke-width="3" fill="none"/>
+  <!-- Eyes -->
+  <circle cx="92" cy="78" r="3" fill="#000"/>
+  <circle cx="108" cy="78" r="3" fill="#000"/>
+  <!-- Money bag -->
+  <circle cx="140" cy="130" r="12" fill="#8B4513"/>
+  <rect x="135" y="125" width="10" height="8" fill="#654321"/>
+  <path d="M138 125 L142 125" stroke="#FFD700" stroke-width="2"/>
+  <!-- Gold coins spilling -->
+  <circle cx="145" cy="145" r="3" fill="#FFD700"/>
+  <circle cx="150" cy="140" r="3" fill="#FFD700"/>
+  <circle cx="148" cy="150" r="3" fill="#FFD700"/>
+  <!-- Scale/balance -->
+  <rect x="50" y="125" width="4" height="20" fill="#8B4513"/>
+  <line x1="35" y1="125" x2="65" y2="125" stroke="#8B4513" stroke-width="2"/>
+  <circle cx="40" cy="130" r="5" fill="#C0C0C0"/>
+  <circle cx="60" cy="130" r="5" fill="#C0C0C0"/>
+  <!-- Arms -->
+  <circle cx="65" cy="125" r="12" fill="#FDBCB4"/>
+  <circle cx="135" cy="125" r="12" fill="#FDBCB4"/>
+  <!-- Rings on fingers -->
+  <circle cx="62" cy="135" r="2" fill="#FFD700"/>
+  <circle cx="138" cy="135" r="2" fill="#FFD700"/>
+  <!-- Legs -->
+  <rect x="85" y="170" width="12" height="30" fill="#800080"/>
+  <rect x="103" y="170" width="12" height="30" fill="#800080"/>
+  <!-- Expensive shoes -->
+  <rect x="83" y="195" width="16" height="8" fill="#8B4513"/>
+  <rect x="101" y="195" width="16" height="8" fill="#8B4513"/>
+  <rect x="85" y="197" width="12" height="4" fill="#FFD700"/>
+  <rect x="103" y="197" width="12" height="4" fill="#FFD700"/>
+</svg>

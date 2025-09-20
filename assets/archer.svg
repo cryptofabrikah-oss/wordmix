@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Archer Avatar -->
+  <!-- Body -->
+  <rect x="80" y="120" width="40" height="55" fill="#228B22"/>
+  <!-- Leather vest -->
+  <rect x="75" y="115" width="50" height="45" fill="#8B4513" rx="5"/>
+  <!-- Head -->
+  <circle cx="100" cy="80" r="25" fill="#FDBCB4"/>
+  <!-- Hair with hood -->
+  <path d="M75 65 Q100 50 125 65 L125 85 Q100 70 75 85 Z" fill="#228B22"/>
+  <path d="M80 70 Q100 60 120 70 Q110 75 100 72 Q90 75 80 70" fill="#DAA520"/>
+  <!-- Eyes -->
+  <circle cx="92" cy="78" r="3" fill="#000"/>
+  <circle cx="108" cy="78" r="3" fill="#000"/>
+  <!-- Bow -->
+  <path d="M45 90 Q35 120 45 150" stroke="#8B4513" stroke-width="4" fill="none"/>
+  <path d="M45 95 Q55 120 45 145" stroke="#654321" stroke-width="2" fill="none"/>
+  <!-- Bowstring -->
+  <line x1="45" y1="95" x2="45" y2="145" stroke="#DCDCDC" stroke-width="1"/>
+  <!-- Arrow -->
+  <line x1="45" y1="120" x2="25" y2="120" stroke="#8B4513" stroke-width="3"/>
+  <path d="M20 120 L30 115 L30 125 Z" fill="#C0C0C0"/>
+  <path d="M45 118 L50 115 L50 125 L45 122 Z" fill="#228B22"/>
+  <!-- Arms -->
+  <circle cx="60" cy="125" r="12" fill="#FDBCB4"/>
+  <circle cx="140" cy="125" r="12" fill="#FDBCB4"/>
+  <!-- Quiver -->
+  <rect x="125" y="110" width="12" height="30" fill="#654321" rx="2"/>
+  <line x1="128" y1="105" x2="128" y2="115" stroke="#8B4513" stroke-width="2"/>
+  <line x1="131" y1="105" x2="131" y2="115" stroke="#8B4513" stroke-width="2"/>
+  <line x1="134" y1="105" x2="134" y2="115" stroke="#8B4513" stroke-width="2"/>
+  <!-- Legs -->
+  <rect x="85" y="170" width="12" height="30" fill="#228B22"/>
+  <rect x="103" y="170" width="12" height="30" fill="#228B22"/>
+  <!-- Boots -->
+  <rect x="83" y="195" width="16" height="8" fill="#654321"/>
+  <rect x="101" y="195" width="16" height="8" fill="#654321"/>
+</svg>
