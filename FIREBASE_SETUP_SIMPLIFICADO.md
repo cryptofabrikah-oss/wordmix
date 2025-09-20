@@ -82,14 +82,6 @@ service firebase.storage {
 }
 ```
 
-## ❌ **Quando você PRECISARIA de Service Account**
-
-Service accounts são apenas necessários para:
-- **Admin SDK** (operações privilegiadas)
-- **Aplicações server-side** (Node.js, Python, etc.)
-- **Bypass de regras de segurança**
-- **Operações em massa** no backend
-
 ## 🎮 **Para Jogos Mobile: Client-Side é Perfeito!**
 
 Seu jogo mobile funciona 100% com:
@@ -103,14 +95,3 @@ Seu jogo mobile funciona 100% com:
 - ✅ `.env.template` - Simplificado para client-side
 - ✅ `.gitignore` - Protege credenciais
 - ✅ Este guia - Setup simplificado
-
-## 🚨 **Importante**
-
-1. **NUNCA** commite o arquivo `.env`
-2. **Use** apenas as configurações web do Firebase
-3. **Configure** regras de segurança adequadas
-4. **Teste** a autenticação antes de fazer deploy
-
----
-
-**🎉 Resultado:** Seu projeto fica mais simples, mais seguro e sem credenciais desnecessárias!
