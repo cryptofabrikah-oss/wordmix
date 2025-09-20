@@ -1,0 +1,60 @@
+<svg width="208" height="256" viewBox="0 0 208 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Guerreiro - Ganha mais pontos ao finalizar partida -->
+  <!-- Cabeça -->
+  <circle cx="104" cy="80" r="36" fill="#FDBCB4" stroke="#E09E87" stroke-width="3"/>
+  
+  <!-- Elmo de metal -->
+  <path d="M68 60 Q104 32 140 60 Q140 48 104 40 Q68 48 68 60" fill="#C0C0C0"/>
+  <rect x="80" y="48" width="48" height="32" fill="#C0C0C0" rx="6"/>
+  <rect x="86" y="40" width="36" height="16" fill="#E6E6FA" rx="3"/>
+  
+  <!-- Proteção do nariz -->
+  <rect x="101" y="64" width="6" height="24" fill="#C0C0C0"/>
+  
+  <!-- Olhos determinados -->
+  <circle cx="88" cy="72" r="6" fill="#333"/>
+  <circle cx="120" cy="72" r="6" fill="#333"/>
+  <circle cx="88" cy="70" r="1.5" fill="#FFF"/>
+  <circle cx="120" cy="70" r="1.5" fill="#FFF"/>
+  
+  <!-- Boca séria -->
+  <line x1="92" y1="96" x2="116" y2="96" stroke="#333" stroke-width="6"/>
+  
+  <!-- Corpo - Armadura de metal -->
+  <rect x="80" y="128" width="48" height="80" fill="#C0C0C0" rx="6"/>
+  
+  <!-- Detalhes da armadura -->
+  <rect x="86" y="136" width="36" height="64" fill="#E6E6FA" rx="3"/>
+  <circle cx="104" cy="152" r="6" fill="#FFD700"/>
+  <rect x="88" y="168" width="24" height="8" fill="#B0B0B0"/>
+  <rect x="88" y="184" width="24" height="8" fill="#B0B0B0"/>
+  
+  <!-- Braços com proteção -->
+  <rect x="56" y="136" width="18" height="48" fill="#C0C0C0" rx="9"/>
+  <rect x="134" y="136" width="18" height="48" fill="#C0C0C0" rx="9"/>
+  
+  <!-- Mãos com luvas -->
+  <circle cx="65" cy="192" r="9" fill="#8B4513"/>
+  <circle cx="143" cy="192" r="9" fill="#8B4513"/>
+  
+  <!-- Espada -->
+  <rect x="151" y="100" width="9" height="80" fill="#C0C0C0"/>
+  <rect x="148" y="92" width="15" height="16" fill="#8B4513"/>
+  <circle cx="155.5" cy="100" r="3" fill="#FFD700"/>
+  <path d="M154 180 L148 188 L163 188 Z" fill="#E6E6FA"/>
+  
+  <!-- Escudo no braço esquerdo -->
+  <ellipse cx="56" cy="160" rx="12" ry="24" fill="#C0C0C0"/>
+  <ellipse cx="56" cy="160" rx="9" ry="20" fill="#E6E6FA"/>
+  <path d="M50 148 L62 148 L56 160 Z" fill="#FF0000"/>
+  
+  <!-- Pernas com proteção -->
+  <rect x="86" y="208" width="15" height="40" fill="#C0C0C0" rx="6"/>
+  <rect x="107" y="208" width="15" height="40" fill="#C0C0C0" rx="6"/>
+  
+  <!-- Botas de metal -->
+  <ellipse cx="93.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+  <ellipse cx="114.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+  <rect x="86" y="240" width="15" height="8" fill="#C0C0C0"/>
+  <rect x="107" y="240" width="15" height="8" fill="#C0C0C0"/>
+</svg>

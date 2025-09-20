@@ -1,0 +1,68 @@
+<svg width="208" height="256" viewBox="0 0 208 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mercador - Ganha mais gold ao finalizar partida -->
+  <!-- Cabeça -->
+  <circle cx="104" cy="80" r="36" fill="#FDBCB4" stroke="#E09E87" stroke-width="3"/>
+  
+  <!-- Cabelo com chapéu de mercador -->
+  <path d="M68 60 Q104 32 140 60 Q140 48 104 40 Q68 48 68 60" fill="#8B4513"/>
+  <rect x="80" y="48" width="48" height="24" fill="#B8860B" rx="9"/>
+  <rect x="86" y="40" width="36" height="16" fill="#DAA520" rx="6"/>
+  
+  <!-- Olhos espertos -->
+  <circle cx="88" cy="72" r="6" fill="#333"/>
+  <circle cx="120" cy="72" r="6" fill="#333"/>
+  <circle cx="88" cy="70" r="1.5" fill="#FFF"/>
+  <circle cx="120" cy="70" r="1.5" fill="#FFF"/>
+  
+  <!-- Bigode -->
+  <path d="M88 88 Q104 96 120 88" stroke="#8B4513" stroke-width="6" fill="none"/>
+  
+  <!-- Nariz -->
+  <circle cx="104" cy="84" r="3" fill="#E09E87"/>
+  
+  <!-- Boca sorridente -->
+  <path d="M92 100 Q104 108 116 100" stroke="#333" stroke-width="3" fill="none"/>
+  
+  <!-- Corpo - Roupa rica de mercador -->
+  <rect x="80" y="128" width="48" height="80" fill="#B8860B" rx="6"/>
+  
+  <!-- Detalhes dourados -->
+  <rect x="88" y="136" width="24" height="8" fill="#FFD700"/>
+  <rect x="88" y="152" width="24" height="8" fill="#FFD700"/>
+  <rect x="88" y="168" width="24" height="8" fill="#FFD700"/>
+  
+  <!-- Braços -->
+  <rect x="56" y="136" width="18" height="48" fill="#FDBCB4" rx="9"/>
+  <rect x="134" y="136" width="18" height="48" fill="#FDBCB4" rx="9"/>
+  
+  <!-- Mãos -->
+  <circle cx="65" cy="192" r="9" fill="#FDBCB4"/>
+  <circle cx="143" cy="192" r="9" fill="#FDBCB4"/>
+  
+  <!-- Bolsa de moedas -->
+  <ellipse cx="56" cy="180" rx="12" ry="24" fill="#8B4513"/>
+  <rect x="50" y="168" width="12" height="8" fill="#654321"/>
+  
+  <!-- Moedas saindo da bolsa -->
+  <circle cx="44" cy="168" r="4.5" fill="#FFD700"/>
+  <circle cx="38" cy="176" r="3" fill="#FFD700"/>
+  <circle cx="50" cy="160" r="3" fill="#FFD700"/>
+  
+  <!-- Moeda na mão direita -->
+  <circle cx="143" cy="180" r="6" fill="#FFD700"/>
+  <rect x="140" y="176" width="6" height="6" fill="#DAA520"/>
+  
+  <!-- Cinto com mais moedas -->
+  <rect x="80" y="192" width="48" height="12" fill="#654321"/>
+  <circle cx="88" cy="198" r="3" fill="#FFD700"/>
+  <circle cx="104" cy="198" r="3" fill="#FFD700"/>
+  <circle cx="120" cy="198" r="3" fill="#FFD700"/>
+  
+  <!-- Pernas -->
+  <rect x="86" y="208" width="15" height="40" fill="#654321" rx="6"/>
+  <rect x="107" y="208" width="15" height="40" fill="#654321" rx="6"/>
+  
+  <!-- Pés -->
+  <ellipse cx="93.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+  <ellipse cx="114.5" cy="248" rx="9" ry="6" fill="#8B4513"/>
+</svg>

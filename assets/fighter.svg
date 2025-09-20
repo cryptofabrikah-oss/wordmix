@@ -1,0 +1,34 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fighter Avatar -->
+  <!-- Body -->
+  <rect x="80" y="120" width="40" height="55" fill="#8B0000"/>
+  <!-- Leather armor -->
+  <rect x="75" y="115" width="50" height="45" fill="#654321" rx="5"/>
+  <!-- Head -->
+  <circle cx="100" cy="80" r="25" fill="#FDBCB4"/>
+  <!-- Hair -->
+  <path d="M75 65 Q100 55 125 65 Q120 75 100 70 Q80 75 75 65" fill="#8B4513"/>
+  <!-- Eyes -->
+  <circle cx="92" cy="78" r="3" fill="#000"/>
+  <circle cx="108" cy="78" r="3" fill="#000"/>
+  <!-- Mouth -->
+  <path d="M95 88 Q100 92 105 88" stroke="#000" stroke-width="2" fill="none"/>
+  <!-- Gauntlets -->
+  <rect x="50" y="125" width="15" height="20" fill="#654321" rx="3"/>
+  <rect x="135" y="125" width="15" height="20" fill="#654321" rx="3"/>
+  <!-- Arms -->
+  <circle cx="65" cy="125" r="12" fill="#FDBCB4"/>
+  <circle cx="135" cy="125" r="12" fill="#FDBCB4"/>
+  <!-- Fighting stance - fists -->
+  <circle cx="57" cy="135" r="8" fill="#FDBCB4"/>
+  <circle cx="143" cy="135" r="8" fill="#FDBCB4"/>
+  <!-- Belt -->
+  <rect x="75" y="150" width="50" height="8" fill="#8B4513"/>
+  <rect x="95" y="148" width="10" height="12" fill="#FFD700"/>
+  <!-- Legs -->
+  <rect x="85" y="170" width="12" height="30" fill="#654321"/>
+  <rect x="103" y="170" width="12" height="30" fill="#654321"/>
+  <!-- Boots -->
+  <rect x="83" y="195" width="16" height="8" fill="#8B4513"/>
+  <rect x="101" y="195" width="16" height="8" fill="#8B4513"/>
+</svg>

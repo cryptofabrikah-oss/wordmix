@@ -1,0 +1,348 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvgfxsb7fc0a4"]
+
+[ext_resource type="Texture2D" uid="uid://qt30568hb6n8" path="res://assets/start.jpeg" id="1_0a1b2"]
+[ext_resource type="Script" uid="uid://dnrwtwnsk1a3" path="res://scripts/CharacterSelect.gd" id="1_1a2b3"]
+[ext_resource type="Texture2D" uid="uid://cngos2yejx1l3" path="res://assets/aprendiz.svg" id="2_2b3c4"]
+[ext_resource type="Texture2D" uid="uid://bkqj5n2cg45sd" path="res://assets/mago.svg" id="3_3c4d5"]
+[ext_resource type="Texture2D" uid="uid://dcht665x1n4h2" path="res://assets/arqueiro.svg" id="4_4d5e6"]
+[ext_resource type="Texture2D" uid="uid://dt64lj2gpb6ri" path="res://assets/mercador.svg" id="5_5e6f7"]
+[ext_resource type="Texture2D" uid="uid://bugfv2skxig2e" path="res://assets/guerreiro.svg" id="6_6f7g8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+bg_color = Color(0.2, 0.01, 0.05, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0, 0, 0, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1a2b3")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0a1b2")
+
+[node name="MainPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 222.0
+offset_right = -50.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="Title" type="Label" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.52, 0.04, 0.23, 1)
+theme_override_font_sizes/font_size = 28
+text = "INVENTARIO DE PERSONAGENS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = -20.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AvatarGrid" type="GridContainer" parent="MainPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Avatar0" type="Panel" parent="MainPanel/ScrollContainer/AvatarGrid"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="Button" type="Button" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite" type="TextureRect" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2b3c4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar0"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "APRENDIZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Avatar1" type="Panel" parent="MainPanel/ScrollContainer/AvatarGrid"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="Button" type="Button" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite" type="TextureRect" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3c4d5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "MAGO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Avatar2" type="Panel" parent="MainPanel/ScrollContainer/AvatarGrid"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="Button" type="Button" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite" type="TextureRect" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4d5e6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "ARQUEIRO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Avatar3" type="Panel" parent="MainPanel/ScrollContainer/AvatarGrid"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="Button" type="Button" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite" type="TextureRect" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_5e6f7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "MERCADOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Avatar4" type="Panel" parent="MainPanel/ScrollContainer/AvatarGrid"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="Button" type="Button" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite" type="TextureRect" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6f7g8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MainPanel/ScrollContainer/AvatarGrid/Avatar4"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "GUERREIRO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -54.0
+offset_right = 35.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "VOLTAR"

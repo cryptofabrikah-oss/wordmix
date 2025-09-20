@@ -1,0 +1,42 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ninja Avatar -->
+  <!-- Body -->
+  <rect x="80" y="120" width="40" height="55" fill="#2F2F2F"/>
+  <!-- Ninja suit -->
+  <rect x="75" y="115" width="50" height="50" fill="#1C1C1C" rx="5"/>
+  <!-- Head -->
+  <circle cx="100" cy="80" r="25" fill="#FDBCB4"/>
+  <!-- Ninja mask -->
+  <rect x="75" y="70" width="50" height="30" fill="#1C1C1C"/>
+  <path d="M75 85 Q100 75 125 85 Q100 90 75 85" fill="#1C1C1C"/>
+  <!-- Eyes (only visible part) -->
+  <rect x="88" y="76" width="8" height="6" fill="#FDBCB4"/>
+  <rect x="104" y="76" width="8" height="6" fill="#FDBCB4"/>
+  <circle cx="92" cy="79" r="2" fill="#000"/>
+  <circle cx="108" cy="79" r="2" fill="#000"/>
+  <!-- Katana on back -->
+  <rect x="115" y="90" width="4" height="50" fill="#1C1C1C"/>
+  <rect x="110" y="85" width="14" height="8" fill="#8B4513"/>
+  <circle cx="117" cy="89" r="3" fill="#FFD700"/>
+  <!-- Shuriken -->
+  <g transform="translate(140,110) rotate(45)">
+    <path d="M-6 0 L0 -6 L6 0 L0 6 Z" fill="#C0C0C0"/>
+    <path d="M-3 -3 L3 3 M3 -3 L-3 3" stroke="#696969" stroke-width="1"/>
+  </g>
+  <!-- Arms -->
+  <circle cx="65" cy="125" r="12" fill="#1C1C1C"/>
+  <circle cx="135" cy="125" r="12" fill="#1C1C1C"/>
+  <!-- Hands -->
+  <circle cx="60" cy="135" r="8" fill="#FDBCB4"/>
+  <circle cx="140" cy="135" r="8" fill="#FDBCB4"/>
+  <!-- Belt with pouches -->
+  <rect x="75" y="150" width="50" height="6" fill="#654321"/>
+  <rect x="85" y="148" width="8" height="10" fill="#2F2F2F"/>
+  <rect x="107" y="148" width="8" height="10" fill="#2F2F2F"/>
+  <!-- Legs -->
+  <rect x="85" y="170" width="12" height="30" fill="#1C1C1C"/>
+  <rect x="103" y="170" width="12" height="30" fill="#1C1C1C"/>
+  <!-- Ninja shoes -->
+  <rect x="83" y="195" width="16" height="8" fill="#1C1C1C"/>
+  <rect x="101" y="195" width="16" height="8" fill="#1C1C1C"/>
+</svg>

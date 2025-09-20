@@ -1,0 +1,70 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#f0f0f0" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Helmet -->
+  <path d="M24 18 Q32 12 40 18 Q40 26 32 24 Q24 26 24 18" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="26" y="22" width="12" height="4" fill="#c0c0c0"/>
+  
+  <!-- Helmet visor -->
+  <rect x="28" y="24" width="8" height="2" fill="#333" rx="1"/>
+  
+  <!-- Plume on helmet -->
+  <path d="M32 12 Q30 8 32 6 Q34 8 32 12" fill="#dc143c"/>
+  
+  <!-- Face (partially visible) -->
+  <ellipse cx="32" cy="30" rx="8" ry="6" fill="#fdbcb4"/>
+  
+  <!-- Eyes (through visor) -->
+  <circle cx="29" cy="29" r="1" fill="#ff0000"/>
+  <circle cx="35" cy="29" r="1" fill="#ff0000"/>
+  
+  <!-- Nose guard -->
+  <rect x="31" y="28" width="2" height="4" fill="#c0c0c0"/>
+  
+  <!-- Body armor -->
+  <rect x="24" y="36" width="16" height="24" rx="2" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  
+  <!-- Chest plate details -->
+  <rect x="26" y="38" width="12" height="8" fill="#a9a9a9" stroke="#696969" stroke-width="1"/>
+  <line x1="28" y1="40" x2="36" y2="40" stroke="#696969" stroke-width="1"/>
+  <line x1="28" y1="42" x2="36" y2="42" stroke="#696969" stroke-width="1"/>
+  <line x1="28" y1="44" x2="36" y2="44" stroke="#696969" stroke-width="1"/>
+  
+  <!-- Sword -->
+  <rect x="46" y="35" width="3" height="20" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="45" y="33" width="5" height="4" fill="#8b4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="47.5" cy="32" r="1.5" fill="#ffd700"/>
+  
+  <!-- Sword blade shine -->
+  <line x1="47" y1="35" x2="47" y2="50" stroke="#fff" stroke-width="0.5"/>
+  
+  <!-- Shield -->
+  <ellipse cx="16" cy="45" rx="6" ry="8" fill="#8b0000" stroke="#654321" stroke-width="2"/>
+  <path d="M16 37 L20 41 L16 45 L12 41 Z" fill="#ffd700"/>
+  <circle cx="16" cy="45" r="2" fill="#c0c0c0"/>
+  
+  <!-- Shield straps -->
+  <ellipse cx="16" cy="42" rx="3" ry="1" fill="none" stroke="#654321" stroke-width="1"/>
+  <ellipse cx="16" cy="48" rx="3" ry="1" fill="none" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Arms (armored) -->
+  <ellipse cx="20" cy="48" rx="4" ry="8" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <ellipse cx="44" cy="48" rx="4" ry="8" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  
+  <!-- Arm guards -->
+  <rect x="18" y="44" width="4" height="8" fill="#a9a9a9" stroke="#696969" stroke-width="1"/>
+  <rect x="42" y="44" width="4" height="8" fill="#a9a9a9" stroke="#696969" stroke-width="1"/>
+  
+  <!-- Gauntlets -->
+  <circle cx="20" cy="54" r="3" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <circle cx="44" cy="54" r="3" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  
+  <!-- Leg armor -->
+  <rect x="26" y="56" width="5" height="6" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="33" y="56" width="5" height="6" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  
+  <!-- Battle scars on armor -->
+  <path d="M30 40 L34 42" stroke="#333" stroke-width="1" fill="none"/>
+  <path d="M28 48 L30 50" stroke="#333" stroke-width="1" fill="none"/>
+</svg>
