@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnvojhvof7qld"]
+[gd_scene load_steps=14 format=3 uid="uid://dnvojhvof7qld"]
 
 [ext_resource type="Texture2D" uid="uid://qt30568hb6n8" path="res://assets/start.jpeg" id="1_8t08e"]
 [ext_resource type="Script" uid="uid://b7obskxwllqbo" path="res://scripts/start.gd" id="1_j3bqk"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://4qlt585wykj5" path="res://assets/market.png" id="3_d48hf"]
 [ext_resource type="Texture2D" uid="uid://cutihao70cdxk" path="res://assets/crystal.png" id="3_ea00n"]
 [ext_resource type="Texture2D" uid="uid://bjhynlo37l6xy" path="res://assets/greenbutton.png" id="3_j3bqk"]
-[ext_resource type="Texture2D" uid="uid://buoau0684xqti" path="res://assets/rank.png" id="3_lynlw"]
 [ext_resource type="Texture2D" uid="uid://cf0qka015qqnl" path="res://assets/inventory.png" id="5_yrm6t"]
 [ext_resource type="Texture2D" uid="uid://dwg6phj5w6eu4" path="res://assets/leftarrow.png" id="6_yud8w"]
 [ext_resource type="FontFile" uid="uid://c35u4i2axngsu" path="res://fonts/8-BIT WONDER.TTF" id="8_q7y7s"]
@@ -121,6 +120,30 @@ vertical_alignment = 1
 [node name="ad" type="HBoxContainer" parent="TopBar"]
 layout_mode = 2
 
+[node name="BottonBar" type="HBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.5
+offset_top = -202.0
+offset_right = 170.5
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="Market" type="Button" parent="BottonBar"]
+layout_mode = 2
+icon = ExtResource("3_d48hf")
+
+[node name="Inventory" type="Button" parent="BottonBar"]
+layout_mode = 2
+icon = ExtResource("5_yrm6t")
+
 [node name="CharacterPanel" type="Panel" parent="."]
 z_index = 1
 layout_mode = 1
@@ -224,6 +247,28 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_arrow")
 icon = ExtResource("8_ugrxo")
 flat = true
 
+[node name="PlayerLevelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 139.0
+offset_right = 100.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_q7y7s")
+theme_override_font_sizes/font_size = 32
+text = "NÍVEL: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StartB" type="Button" parent="."]
 z_index = 1
 layout_mode = 1
@@ -259,31 +304,3 @@ text = "novo Jogo
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BottonBar" type="HBoxContainer" parent="."]
-z_index = 1
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -262.0
-offset_top = -222.0
-offset_right = 262.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 25
-
-[node name="Market" type="Button" parent="BottonBar"]
-layout_mode = 2
-icon = ExtResource("3_d48hf")
-
-[node name="Rank" type="Button" parent="BottonBar"]
-layout_mode = 2
-icon = ExtResource("3_lynlw")
-
-[node name="Inventory" type="Button" parent="BottonBar"]
-layout_mode = 2
-icon = ExtResource("5_yrm6t")

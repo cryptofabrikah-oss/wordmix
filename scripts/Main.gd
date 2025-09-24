@@ -159,27 +159,39 @@ func _new_game() -> void:
 # ESCOLHER PALAVRA
 # ---------------------------
 func _pick_answer() -> void:
-	if words_map.size() == 0:
-		push_error("words_map vazio! Nenhuma palavra para escolher.")
-		answer = "ERROR"
-		return
-	rng.randomize()
-	var keys = words_map.keys()
-	answer = keys[rng.randi_range(0, keys.size() - 1)]
-	print("Answer picked: %s" % answer)
+	# Usa o novo sistema de seleção baseado no nível e dificuldade do jogador
+	var selected_word = Global.get_random_word_for_level(Global.get_current_level())
+	
+	if selected_word.is_empty():
+		# Fallback para o sistema antigo se houver problema
+		print("⚠️ Fallback para sistema antigo de palavras")
+		if words_map.size() == 0:
+			push_error("words_map vazio! Nenhuma palavra para escolher.")
+			answer = "ERROR"
+			return
+		rng.randomize()
+		var keys = words_map.keys()
+		answer = keys[rng.randi_range(0, keys.size() - 1)]
+	else:
+		# Remove acentos da palavra selecionada para compatibilidade
+		answer = remove_accents(selected_word.to_upper())
+	
+	var current_difficulty = Global.get_difficulty_for_level(Global.get_current_level())
+	print("🎯 Palavra escolhida: %s (Nível %d, Dificuldade %d)" % [answer, Global.get_current_level(), current_difficulty])
 
 # ---------------------------
 # ATUALIZAR STATUS
 # ---------------------------
 func _update_status(text: String = "") -> void:
-	status_lbl.text = text if text != "" else "Adivinhe a palavra de 5 letras"
+	var base_text = text if text != "" else "Adivinhe a palavra de 5 letras"
+	status_lbl.text = base_text
 	print("Status updated: %s" % status_lbl.text)
 
 # ---------------------------
 # TECLADO
 # ---------------------------
 func _on_key_letter(ch: String) -> void:
-	if row >= MAX_TRIES or col >= WORD_SIZE:
+	if row >= max_tries or col >= WORD_SIZE:
 		return
 	
 	# Se estamos na posição revelada pelo mago, pula automaticamente
@@ -244,49 +256,103 @@ func _on_key_enter() -> void:
 	col = 0
 
 	var gold_this_round: int = 0
-	var points_this_round: int = 0
 	var status_text: String = "" 
 	if guess == answer:
+		# Jogador acertou - incrementa nível
+		Global.add_correct_answer()
+		
 		var TRIE = max_tries - row
-		points_this_round = 5 * TRIE
-		gold_this_round = 10 * TRIE
-		# Apply character bonuses
-		points_this_round = _apply_character_bonus_points(points_this_round)
-		gold_this_round = _apply_character_bonus_gold(gold_this_round)
-		status_text = "Voce ganhou"
-		_update_status("Parabéns! Você acertou.")
-		_lock_input(points_this_round, gold_this_round, status_text)
+		_on_word_found(TRIE)
 		return
 
 	row += 1
 	if row >= max_tries:
-		points_this_round = 5
 		gold_this_round = 1
 		# Apply character bonuses even on failure
-		points_this_round = _apply_character_bonus_points(points_this_round)
 		gold_this_round = _apply_character_bonus_gold(gold_this_round)
 		status_text = "Voce falhou"
 		_update_status("Fim de jogo. A palavra era: %s" % answer)
-		_lock_input(points_this_round, gold_this_round, status_text)
+		_lock_input(gold_this_round, status_text)
+
+func _on_word_found(TRIE: int):
+	print("🎉 Palavra encontrada!")
+	
+	# Calcula recompensas baseadas no nível
+	var gold_this_round: int = 0
+	var status_text: String = ""
+	
+	if TRIE == 1:
+		# Primeira tentativa - recompensa máxima
+		gold_this_round = 10 * TRIE
+		status_text = "Perfeito! Primeira tentativa!"
+		
+		# Aplica bônus de personagem
+		gold_this_round = _apply_character_bonus_gold(gold_this_round)
+		
+		# Finaliza rodada
+		_lock_input(gold_this_round, status_text)
+		
+	elif TRIE <= 3:
+		# Tentativas 2-3 - recompensa reduzida
+		gold_this_round = 1
+		status_text = "Muito bem! " + str(TRIE) + "ª tentativa"
+		
+		# Aplica bônus de personagem
+		gold_this_round = _apply_character_bonus_gold(gold_this_round)
+		
+		# Finaliza rodada
+		_lock_input(gold_this_round, status_text)
+	else:
+		# Tentativas 4+ - recompensa mínima
+		gold_this_round = 10 * TRIE
+		status_text = "Voce ganhou"
+		
+		# Aplica bônus de personagem
+		gold_this_round = _apply_character_bonus_gold(gold_this_round)
+		
+		# Finaliza rodada
+		_update_status("Parabéns! Você acertou.")
+		_lock_input(gold_this_round, status_text)
 
 # ---------------------------
 # LOCK INPUT E END GAME
 # ---------------------------
-func _lock_input(points_this_round: int, gold_this_round: int, status_text: String) -> void:
-	Global.add_points(points_this_round)
+func _lock_input(gold_this_round: int, status_text: String) -> void:
+	# Debug das recompensas antes de adicionar
+	print("🎯 Calculando recompensas:")
+	print("   Gold: ", gold_this_round)
+	print("   Personagem: ", Global.avatar_names[Global.selected_avatar])
+	
+	# Adiciona gold ao jogador
 	Global.add_gold(gold_this_round)
 	
-	# Atualiza o ranking semanal com a nova pontuação
-	Global.add_to_weekly_ranking()
+	# Sistema de drop de cristais para o mercador
+	var crystals_earned: int = 0
+	if Global.selected_avatar == 3:  # Mercador
+		rng.randomize()
+		var drop_chance = rng.randf()
+		if drop_chance <= 0.1:  # 10% de chance
+			crystals_earned = rng.randi_range(1, 5)
+			Global.add_crystal(crystals_earned)
+			print("💎 Mercador ganhou cristais: ", crystals_earned)
+	
+	# Debug dos totais após adicionar
+	print("💰 Totais após recompensas:")
+	print("   Gold total: ", Global.gold)
+	print("   Cristais totais: ", Global.crystal)
 	
 	# Reseta as habilidades para a próxima partida
 	Global.reset_abilities()
 
 	var end_scene: Control = EndGameScene.instantiate()
 	end_scene.status_end = status_text 
-	end_scene.points_earned = points_this_round
 	end_scene.gold_earned = gold_this_round
+	end_scene.crystals_earned = crystals_earned
 	
+	print("🎬 Carregando tela de fim de jogo com:")
+	print("   Status: ", status_text)
+	print("   Gold ganho: ", gold_this_round)
+	print("   Cristais ganhos: ", crystals_earned)
 
 	get_tree().root.add_child(end_scene)
 	get_tree().current_scene.queue_free()
@@ -347,22 +413,43 @@ func _on_backbutton_pressed() -> void:
 	print("Back button pressed")
 
 # ---------------------------
-# CHARACTER ABILITIES
+# APLICAR HABILIDADES DOS PERSONAGENS
 # ---------------------------
 func _apply_character_abilities() -> void:
-	# Reset to default values
+	# Calcular dificuldade atual baseada no nível do jogador
+	var current_difficulty = Global.get_difficulty_for_level(Global.level)
+	
+	# Resetar tentativas baseado na dificuldade
 	max_tries = MAX_TRIES
 	
-	# Apply archer ability (extra attempt)
-	if Global.selected_avatar == 2:  # Arqueiro
-		max_tries = MAX_TRIES + 1
-		# Archer ability: Extra attempt granted
+	# Sistema de mecânicas progressivas baseado na dificuldade
+	match current_difficulty:
+		1:
+			# Dificuldade 1 (níveis 1-10): Máximo de tentativas
+			max_tries = MAX_TRIES
+		2:
+			# Dificuldade 2 (níveis 11-20): Uma tentativa a menos
+			max_tries = MAX_TRIES - 1
+		3:
+			# Dificuldade 3 (níveis 21-30): Duas tentativas a menos
+			max_tries = MAX_TRIES - 2
+		_:
+			# Dificuldade 4+ (níveis 31+): Três tentativas a menos (mínimo 3)
+			max_tries = max(MAX_TRIES - 3, 3)
+	
+	# Aplicar habilidades específicas dos personagens
+	match Global.selected_avatar:
+		0:  # Guerreiro - sem modificações especiais
+			pass
+		1:  # Mago - revela uma letra aleatória
+			mage_ability_used = false
+			mage_revealed_position = -1
+		2:  # Arqueiro - ganha uma tentativa extra
+			max_tries += 1
+	
+	print("🎯 Dificuldade %d aplicada: %d tentativas disponíveis" % [current_difficulty, max_tries])
 
-func _apply_character_bonus_points(base_points: int) -> int:
-	# Guerreiro ganha mais pontos
-	if Global.selected_avatar == 4:  # Guerreiro
-		return int(base_points * 1.5)  # 50% mais pontos
-	return base_points
+
 
 func _apply_character_bonus_gold(base_gold: int) -> int:
 	# Mercador ganha mais gold

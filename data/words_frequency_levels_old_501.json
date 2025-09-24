@@ -1,0 +1,130 @@
+{
+  "1": {
+    "name": "Nível 1 - Muito frequentes",
+    "frequency_range": "≤ 6.0",
+    "word_count": 50,
+    "words": [
+      "muito", "sobre", "mesmo", "todos", "ainda", "entre", "fazer", "minha", "tempo", "assim",
+      "agora", "mundo", "forma", "parte", "estão", "foram", "todas", "então", "maior", "disse",
+      "feira", "nossa", "outro", "nosso", "tenho", "menos", "vezes", "antes", "sendo", "podem",
+      "estou", "pouco", "desde", "saúde", "nunca", "coisa", "tinha", "livro", "estar", "hotel",
+      "neste", "pelos", "outra", "final", "conta", "saber", "grupo", "lugar", "homem", "poder"
+    ]
+  },
+  "2": {
+    "name": "Nível 2 - Frequentes",
+    "frequency_range": "6.0 - 7.0",
+    "word_count": 50,
+    "words": [
+      "gente", "deste", "dizer", "geral", "noite", "desta", "tanto", "dados", "filme", "preço",
+      "mulher", "jogos", "local", "ficar", "valor", "quero", "nesta", "mesma", "horas", "quase",
+      "temos", "curso", "vamos", "corpo", "seria", "ponto", "falar", "vocês", "março", "disso",
+      "abril", "filho", "julho", "volta", "terra", "feito", "jesus", "pelas", "ficou", "junho",
+      "algum", "texto", "meses", "nesse", "maria", "esses", "santa", "vista", "dessa", "tenha"
+    ]
+  },
+  "3": {
+    "name": "Nível 3 - Comuns",
+    "frequency_range": "7.0 - 8.0",
+    "word_count": 50,
+    "words": [
+      "novos", "falta", "série", "serão", "campo", "claro", "vídeo", "ajuda", "desse", "porém",
+      "quais", "carro", "essas", "tarde", "total", "lista", "venda", "certo", "super", "usado",
+      "nível", "porto", "busca", "novas", "havia", "gosto", "devem", "papel", "feliz", "norte",
+      "fácil", "linha", "frete", "estes", "amigo", "força", "olhos", "idade", "cerca", "causa",
+      "dicas", "livre", "fonte", "criar", "festa", "morte", "posso", "silva", "marca", "favor"
+    ]
+  },
+  "4": {
+    "name": "Nível 4 - Moderadamente comuns",
+    "frequency_range": "8.0 - 9.0",
+    "word_count": 50,
+    "words": [
+      "plano", "apoio", "manhã", "época", "fosse", "acima", "junto", "santo", "deles", "forte",
+      "longo", "cinco", "perto", "legal", "sexta", "tendo", "fazem", "atrás", "autor", "porta",
+      "linda", "passa", "caixa", "peças", "único", "ações", "civil", "casos", "praia", "nessa",
+      "prova", "natal", "banco", "passo", "minas", "somos", "clube", "banda", "lindo", "áreas",
+      "ordem", "prazo", "feita", "baixo", "fundo", "comum", "obras", "viver", "levar", "menor"
+    ]
+  },
+  "5": {
+    "name": "Nível 5 - Médias",
+    "frequency_range": "9.0 - 10.0",
+    "word_count": 50,
+    "words": [
+      "deixa", "cores", "estas", "fórum", "vagas", "jovem", "única", "visão", "preto", "deixe",
+      "risco", "serem", "verde", "redes", "sejam", "ontem", "média", "ideia", "atual", "ouvir",
+      "possa", "razão", "opção", "trata", "olhar", "visto", "casas", "médio", "chega", "setor",
+      "tomar", "união", "teria", "costa", "jogar", "mudar", "obter", "tipos", "dando", "email",
+      "achei", "jeito", "leite", "terça", "ideal", "massa", "amiga", "saiba", "longe", "custo"
+    ]
+  },
+  "6": {
+    "name": "Nível 6 - Menos frequentes",
+    "frequency_range": "10.0 - 11.0",
+    "word_count": 50,
+    "words": [
+      "pagar", "sonho", "tirar", "reais", "bahia", "basta", "filha", "sites", "rádio", "ótimo",
+      "gosta", "faixa", "torna", "verão", "crise", "houve", "casal", "velho", "certa", "mente",
+      "graça", "sabia", "globo", "votos", "comer", "abrir", "video", "igual", "chave", "sinto",
+      "capaz", "troca", "breve", "adoro", "corte", "sorte", "renda", "motor", "saída", "crime",
+      "andar", "banho", "delas", "nomes", "enfim", "baixa", "cargo", "roupa", "tiver", "serra"
+    ]
+  },
+  "7": {
+    "name": "Nível 7 - Raras",
+    "frequency_range": "11.0 - 12.0",
+    "word_count": 50,
+    "words": [
+      "acaba", "ficam", "carta", "turma", "ambos", "bolsa", "segue", "sinal", "jogue", "disco",
+      "teste", "temas", "canal", "reino", "idéia", "dizem", "irmão", "pedir", "fique", "carne",
+      "termo", "chuva", "álbum", "jorge", "folha", "rosto", "parar", "líder", "artes", "vindo",
+      "falou", "chama", "praça", "barra", "sabem", "perda", "mídia", "aluno", "exame", "beijo",
+      "podia", "vento", "meios", "etapa", "pegar", "chefe", "vidas", "itens", "andré", "erros"
+    ]
+  },
+  "8": {
+    "name": "Nível 8 - Muito raras",
+    "frequency_range": "12.0 - 13.0",
+    "word_count": 50,
+    "words": [
+      "china", "levou", "longa", "monte", "cheio", "vendo", "resto", "queda", "carga", "pedra",
+      "serve", "vinho", "fatos", "daqui", "light", "águas", "torno", "haver", "posts", "envio",
+      "dança", "fazia", "ganha", "vidro", "extra", "venha", "notas", "check", "entra", "lazer",
+      "museu", "clima", "aliás", "achar", "lendo", "seres", "dupla", "ferro", "paris", "rural",
+      "placa", "taxas", "ciclo", "senha", "oeste", "clara", "posto", "gomes", "preso", "sério"
+    ]
+  },
+  "9": {
+    "name": "Nível 9 - Extremamente raras",
+    "frequency_range": "13.0 - 14.0",
+    "word_count": 50,
+    "words": [
+      "letra", "marco", "calor", "velha", "cheia", "frase", "bruno", "úteis", "preta", "salão",
+      "fomos", "moral", "ponta", "prata", "sente", "humor", "metal", "goiás", "botão", "penso",
+      "canto", "terão", "toque", "armas", "dieta", "órgão", "curto", "culpa", "palco", "pensa",
+      "ceará", "lucas", "padre", "matar", "penal", "criou", "ética", "rocha", "datas", "facto",
+      "paula", "ponte", "negro", "nisso", "terem", "curta", "morto", "tenta", "grave", "tocar"
+    ]
+  },
+  "10": {
+    "name": "Nível 10 - Quase inexistentes",
+    "frequency_range": "14.0 - 15.0",
+    "word_count": 50,
+    "words": [
+      "solar", "mudou", "couro", "redor", "ritmo", "seção", "aviso", "pediu", "custa", "japão",
+      "atriz", "cópia", "áudio", "creme", "porno", "bloco", "negra", "forno", "valeu", "passe",
+      "dizia", "regra", "lança", "samba", "peixe", "pasta", "ajude", "posse", "black", "faria",
+      "viram", "lopes", "login", "perde", "unhas", "dores", "vinte", "pobre", "ampla", "senti",
+      "sabor", "gerar", "vivem", "peito", "rapaz", "fluxo", "cento", "beira", "avião", "ficha"
+    ]
+  },
+  "11": {
+    "name": "Nível 11 - Inexistentes",
+    "frequency_range": "> 15.0",
+    "word_count": 1,
+    "words": [
+      "caras"
+    ]
+  }
+}

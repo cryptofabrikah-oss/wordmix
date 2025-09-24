@@ -238,7 +238,7 @@ theme_override_constants/separation = 10
 [node name="CrystalPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer/PriceContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "💎 50"
+text = "💎 75"
 vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/MagoCard/VBoxContainer"]
@@ -292,7 +292,7 @@ theme_override_constants/separation = 10
 [node name="GoldPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer/PriceContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "🪙 200"
+text = "🪙 750"
 vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/ArqueiroCard/VBoxContainer"]
@@ -346,7 +346,7 @@ theme_override_constants/separation = 10
 [node name="GoldPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer/PriceContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "🪙 300"
+text = "🪙 250"
 vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/MercadorCard/VBoxContainer"]
@@ -400,7 +400,7 @@ theme_override_constants/separation = 10
 [node name="CrystalPrice" type="Label" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer/PriceContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "💎 75"
+text = "💎 25"
 vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Mainpanel/ScrollContainer/CharacterGrid/GuerreiroCard/VBoxContainer"]

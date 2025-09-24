@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcjhrl03jnufo" path="res://assets/game.jpeg" id="2_6lcay"]
 [ext_resource type="Texture2D" uid="uid://xt2oev1fc6d6" path="res://assets/exitbutton.png" id="3_6lcay"]
 [ext_resource type="Texture2D" uid="uid://brapl3hd4onl" path="res://assets/gold.png" id="7_i5uwy"]
+[ext_resource type="Texture2D" uid="uid://cutihao70cdxk" path="res://assets/crystal.png" id="3_ea00n"]
 [ext_resource type="Theme" uid="uid://crbnt5dn6w7by" path="res://themes/new_theme.tres" id="7_plvne"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plvne"]
@@ -131,7 +132,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -120.0
 offset_top = -50.0
+offset_right = -10.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -146,9 +149,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -58.0
+offset_left = -55.0
 offset_top = -32.0
-offset_right = 58.0
+offset_right = 55.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
@@ -162,6 +165,48 @@ stretch_mode = 3
 layout_mode = 2
 theme = ExtResource("7_plvne")
 theme_override_colors/font_color = Color(1, 0.831373, 0.00392157, 1)
+vertical_alignment = 1
+
+[node name="crystalcontainer" type="Panel" parent="endggame_panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -50.0
+offset_right = 120.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_6lcay")
+
+[node name="container" type="HBoxContainer" parent="endggame_panel/crystalcontainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -32.0
+offset_right = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="endggame_panel/crystalcontainer/container"]
+layout_mode = 2
+texture = ExtResource("3_ea00n")
+stretch_mode = 3
+
+[node name="Crystals" type="Label" parent="endggame_panel/crystalcontainer/container"]
+layout_mode = 2
+theme = ExtResource("7_plvne")
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
 vertical_alignment = 1
 
 [node name="newgamecontainer" type="Panel" parent="endggame_panel"]

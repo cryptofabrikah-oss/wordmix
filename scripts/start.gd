@@ -15,8 +15,9 @@ extends Control
 @onready var confirm_name_button = $CharacterPanel/CharacterContainer/CenterBox/PlayerNameContainer/ConfirmNameButton
 # BottomBar
 @onready var market_btn = $BottonBar/Market
-@onready var rank_btn = $BottonBar/Rank
 @onready var inventory_btn = $BottonBar/Inventory
+# Player Level
+@onready var player_level_label = $PlayerLevelLabel
 
 # Variáveis de controle
 var is_first_run: bool = false
@@ -27,7 +28,6 @@ func _ready():
 	
 	# Conecta os sinais
 	market_btn.pressed.connect(_on_market_pressed)
-	rank_btn.pressed.connect(_on_rank_pressed)
 	inventory_btn.pressed.connect(_on_inventory_pressed)
 	start_btn.pressed.connect(_on_start_pressed)
 	left_arrow.pressed.connect(_on_left_arrow_pressed)
@@ -37,7 +37,12 @@ func _ready():
 	confirm_name_button.pressed.connect(_on_confirm_name_pressed)
 	player_name_input.text_submitted.connect(_on_name_text_submitted)
 	
-	# Ouve atualizações vindas do Global para refletir dados online quando chegarem
+	# Conecta sinal para atualizar quando retornar à cena
+	if not tree_entered.is_connected(_on_tree_entered):
+		tree_entered.connect(_on_tree_entered)
+		print("🔔 Start: conectado ao sinal tree_entered")
+	
+	# Atualiza informações do jogador quando dados chegarem
 	if not Global.player_data_updated.is_connected(_on_global_player_data_updated):
 		Global.player_data_updated.connect(_on_global_player_data_updated)
 		print("🔔 Start: conectado ao sinal Global.player_data_updated")
@@ -59,8 +64,8 @@ func _check_cache_and_initialize():
 		# Tenta carregar dados locais primeiro
 		Global.load_local_data()
 		
-		# Aguarda um pouco para dados do Firebase se disponível
-		var timeout = 3.0
+		# Aguarda um pouco para dados locais carregarem
+		var timeout = 1.0
 		var elapsed = 0.0
 		while not Global.player_data_loaded and elapsed < timeout:
 			await get_tree().process_frame
@@ -80,57 +85,89 @@ func _check_cache_and_initialize():
 		print("❌ Dados inválidos - configurando entrada de nome")
 		_setup_first_run_interface()
 
-# Responde ao sinal do Global quando os dados do jogador forem atualizados (ex.: carregados do Firebase)
+# Responde ao sinal do Global quando os dados do jogador forem atualizados
 func _on_global_player_data_updated():
 	print("🛰️ Start: dados do jogador atualizados (sinal do Global)")
-	print("   • Online: ", Global.is_online, " • UID: ", (Global.player_id if not Global.player_id.is_empty() else "vazio"))
 	_update_gold()
 	_update_player_display()
 
 # Verifica se os dados do jogador são válidos
 func _has_valid_player_data() -> bool:
-	# Verifica se temos pelo menos um nome básico e UID (se online)
-	var has_basic_info = Global.player_name.length() >= 2 and Global.player_name != "Jogador"
-	var has_valid_uid = true  # UID pode estar vazio em modo offline
+	# Se não é primeira execução e os dados foram carregados, considera válido
+	if not Global.is_first_run() and Global.player_data_loaded:
+		print("✅ Dados válidos: não é primeira execução e dados carregados")
+		return true
 	
-	# Se estiver online, UID deve ser válido
-	if Global.is_online:
-		has_valid_uid = not Global.player_id.is_empty()
+	# Para primeira execução, verifica se tem nome personalizado
+	var has_custom_name = Global.player_name.length() >= 2 and Global.player_name != "Jogador"
 	
-	return has_basic_info and has_valid_uid
+	print("🔍 Validação de dados:")
+	print("   - Primeira execução: ", Global.is_first_run())
+	print("   - Dados carregados: ", Global.player_data_loaded)
+	print("   - Nome personalizado: ", has_custom_name)
+	print("   - Nome atual: ", Global.player_name)
+	
+	return has_custom_name
 
 # Inicializa a interface principal
 func _initialize_interface():
+	print("🎨 Inicializando interface com dados válidos...")
+	
+	# Aguarda um frame para garantir que os nós estejam prontos
+	await get_tree().process_frame
+	
 	# Atualiza informações do jogador
 	_update_player_display()
 	# Atualiza o gold ao abrir o menu
 	_update_gold()
+	# Atualiza o nível do jogador
+	_update_player_level()
 	# Atualiza visibilidade das setas
 	_update_arrows_visibility()
 	
-# Configura interface para primeira execução (entrada de nome)
+	print("✅ Interface inicializada com sucesso")
+
+# Adiciona função para ser chamada quando a cena se torna visível
+func _notification(what):
+	if what == NOTIFICATION_VISIBILITY_CHANGED and visible:
+		print("🔄 Start: cena tornou-se visível - atualizando interface")
+		_update_gold()
+		_update_player_display()
+	
+# Configura interface para primeira execução (sem entrada de nome)
 func _setup_first_run_interface():
-	print("🆕 Configurando interface para primeira execução")
+	print("🆕 Configurando interface para primeira execução - carregamento automático")
 	
-	# Oculta o label do nome e mostra os elementos de entrada
-	player_namestart.visible = false
-	player_name_input.visible = true
-	confirm_name_button.visible = true
+	# APENAS configura valores padrão se realmente não existem dados salvos
+	if Global.player_name == "Jogador" and Global.gold == 0 and Global.level == 1:
+		print("🔧 Aplicando valores padrão para primeira execução")
+		# Configura valores padrão do jogador para primeira execução
+		Global.player_name = "Jogador"  # Mantém nome padrão
+		Global.gold = 100  # Inicia com 100 de ouro (valor padrão)
+		Global.crystal = 0  # Inicia com 0 cristais
+		Global.selected_avatar = 0  # Personagem padrão (Aprendiz)
+		Global.unlocked_characters = [0]  # Apenas Aprendiz desbloqueado
+		Global.level = 1  # Nível inicial
+		Global.correct_answers = 0  # Contador de acertos zerado
+		
+		# Gera ID se necessário
+		if Global.player_id.is_empty():
+			var rng = RandomNumberGenerator.new()
+			rng.randomize()
+			Global.player_id = "player_" + str(rng.randi_range(100000, 999999))
+		
+		# Salva dados localmente
+		Global.save_local_data()
+	else:
+		print("📊 Dados existentes detectados - mantendo valores atuais")
+		print("   - Nome: ", Global.player_name)
+		print("   - Gold: ", Global.gold)
+		print("   - Level: ", Global.level)
 	
-	# Desabilita botões principais durante entrada de nome
-	start_btn.disabled = true
-	left_arrow.disabled = true
-	right_arrow.disabled = true
-	market_btn.disabled = true
-	rank_btn.disabled = true
-	inventory_btn.disabled = true
+	# Inicializa interface normalmente (sem entrada de nome)
+	_initialize_interface()
 	
-	# Foca no campo de entrada
-	player_name_input.grab_focus()
-	
-	# Configura valores padrão
-	_update_gold()
-	_update_arrows_visibility()
+	print("✅ Primeira execução configurada automaticamente")
 
 # Processa confirmação do nome
 func _on_confirm_name_pressed():
@@ -172,14 +209,12 @@ func _process_name_confirmation():
 	
 	# Gera ID se necessário
 	if Global.player_id.is_empty():
-		Global.player_id = Global.generate_unique_id()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		Global.player_id = "player_" + str(rng.randi_range(100000, 999999))
 	
 	# Salva dados localmente
 	Global.save_local_data()
-	
-	# Tenta sincronizar com Firebase se online
-	if Global.is_online:
-		Global.sync_with_firebase_robust()
 	
 	# Finaliza configuração
 	_finalize_name_setup()
@@ -206,7 +241,6 @@ func _finalize_name_setup():
 	left_arrow.disabled = false
 	right_arrow.disabled = false
 	market_btn.disabled = false
-	rank_btn.disabled = false
 	inventory_btn.disabled = false
 	
 	# Atualiza interface
@@ -218,15 +252,35 @@ func _finalize_name_setup():
 
 # Chamada quando a cena se torna visível novamente
 func _on_tree_entered():
+	print("🔄 Start: _on_tree_entered chamado - atualizando interface completa")
+	# Aguarda um frame para garantir que os nós estejam prontos
+	await get_tree().process_frame
 	_update_player_display()
+	_update_gold()
+	_update_player_level()
 
 func _update_gold() -> void:
+	# Verifica se os nós estão prontos antes de atualizar
+	if not gold_num or not crystal_num:
+		print("⚠️ Nós de gold/crystal ainda não estão prontos")
+		return
+		
+	print("💰 Atualizando exibição - Gold: %d, Crystal: %d" % [Global.gold, Global.crystal])
 	gold_num.text = str(Global.gold)
 	crystal_num.text = str(Global.crystal)
 
+func _update_player_level() -> void:
+	var current_difficulty = Global.get_difficulty_for_level(Global.level)
+	player_level_label.text = "NIVEL " + str(Global.level)
+
 func _update_player_display() -> void:
-	# Atualiza o nome do jogador
-	player_namestart.text = Global.player_name
+	# Verifica se os nós estão prontos antes de atualizar
+	if not player_sprite or not player_namestart:
+		print("⚠️ Nós de player ainda não estão prontos")
+		return
+		
+	# Exibe apenas o nome do personagem selecionado (sem "Jogador")
+	player_namestart.text = Global.avatar_names[Global.selected_avatar]
 	
 	# Carrega a textura do personagem original (não o avatar)
 	var character_textures = [
@@ -255,10 +309,6 @@ func _on_start_pressed():
 # Seleção de jogador
 func _on_player_pressed():
 	get_tree().change_scene_to_file("res://scenes/CharacterSelect.tscn")
-
-# Ranking semanal
-func _on_rank_pressed():
-	get_tree().change_scene_to_file("res://scenes/Rank.tscn")
 
 # Marketplace
 func _on_market_pressed():
@@ -351,21 +401,15 @@ func _on_name_submitted(line_edit: LineEdit, error_label: Label, dialog: AcceptD
 	
 	if _is_name_unique(name):
 		Global.player_name = name
-		player_namestart.text = name
+		player_namestart.text = Global.avatar_names[Global.selected_avatar]  # Exibe nome do personagem
 		_save_name(name)
 		dialog.queue_free()
 	else:
 		error_label.text = "Este nome já está em uso"
 
 func _is_name_unique(name: String) -> bool:
-	# Usa o sistema integrado do Global.gd para verificar no Firebase
-	if Global.is_online:
-		# Para verificação online, usamos o sistema do Global
-		# Por enquanto retorna true e deixa o Global.check_username_exists fazer a verificação
-		return true
-	else:
-		# Verificação offline simples
-		return name.to_lower() != Global.player_name.to_lower()
+	# Verificação local de nome único
+	return name.to_lower() != Global.player_name.to_lower()
 
 func _save_name(name: String):
 	# Salva o nome usando o sistema integrado do Global
@@ -377,8 +421,5 @@ func _save_name(name: String):
 	config.set_value("player", "name", name)
 	config.save("user://player_config.cfg")
 	
-	# Sincroniza com Firebase se estiver online
-	Global.sync_data()
-	
-	# Atualiza o ranking semanal com o novo nome
-	Global.add_to_weekly_ranking()
+	# Salva dados localmente
+	Global.save_local_data()

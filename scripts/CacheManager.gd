@@ -240,35 +240,34 @@ func get_multiple_values(keys: Array) -> Dictionary:
 # Sincroniza dados do Global para o cache
 func sync_from_global():
 	if not cache_loaded:
-		print("⚠️ Cache não carregado")
+		print("⚠️ Cache não carregado - sincronização ignorada")
 		return
 	
 	cache_data["player_name"] = Global.player_name
 	cache_data["player_gold"] = Global.gold
-	cache_data["player_points"] = Global.points
 	cache_data["player_level"] = Global.level
-	cache_data["player_crystal"] = Global.crystal
+	cache_data["player_crystals"] = Global.crystal
 	cache_data["player_id"] = Global.player_id
-	cache_data["query_token"] = Global.client_query_token
-	cache_data["avatar_index"] = Global.selected_avatar
+	cache_data["player_avatar"] = Global.selected_avatar
 	cache_data["unlocked_characters"] = Global.unlocked_characters
 	
 	print("🔄 Dados sincronizados do Global para cache")
 
 # Sincroniza dados do cache para o Global
 func sync_to_global():
-	print("📥 Sincronizando dados do cache para Global...")
+	if not cache_loaded:
+		print("⚠️ Cache não carregado - sincronização ignorada")
+		return
+	
 	Global.player_name = cache_data.get("player_name", "Jogador")
-	Global.gold = cache_data.get("player_gold", 0)
+	Global.gold = cache_data.get("player_gold", 100)
 	Global.level = cache_data.get("player_level", 1)
-	Global.points = cache_data.get("player_points", 0)
-	Global.crystal = cache_data.get("player_crystal", 0)
-	Global.selected_avatar = cache_data.get("selected_avatar", 0)
-	Global.unlocked_characters = cache_data.get("unlocked_characters", [0])
+	Global.crystal = cache_data.get("player_crystals", 0)
 	Global.player_id = cache_data.get("player_id", "")
-	Global.firebase_auth_uid = cache_data.get("firebase_auth_uid", "")
-	Global.client_query_token = cache_data.get("client_query_token", "")
-	print("✅ Dados sincronizados para Global")
+	Global.selected_avatar = cache_data.get("player_avatar", 0)
+	Global.unlocked_characters = cache_data.get("unlocked_characters", [0])
+	
+	print("🔄 Dados sincronizados do cache para Global")
 
 # ===== VALIDAÇÃO E INTEGRIDADE =====
 
@@ -303,18 +302,25 @@ func _verify_cache_integrity() -> bool:
 
 func _initialize_empty_cache():
 	cache_data = {
-		"player_name": "",
-		"player_gold": 0,
-		"player_points": 0,
-		"player_level": 1,
-		"player_crystal": 0,
+		"metadata": {
+			"version": CACHE_VERSION,
+			"created_at": Time.get_unix_time_from_system(),
+			"last_modified": Time.get_unix_time_from_system(),
+			"last_saved": 0
+		},
+		"data": {
+			"player_name": "Jogador",
+			"player_gold": 100,
+			"player_level": 1,
+			"player_crystal": 0,
 		"player_id": "",
-		"query_token": "",
 		"avatar_index": 0,
 		"unlocked_characters": [0]
+		}
 	}
 	cache_loaded = true
-	print("🆕 Cache vazio inicializado")
+	cache_dirty = true
+	print("🆕 Cache vazio inicializado com estrutura completa")
 
 # ===== INFORMAÇÕES E DEBUG =====
 
@@ -355,3 +361,18 @@ func set_auto_save_interval(interval: float):
 	auto_save_interval = interval
 	auto_save_timer.wait_time = interval
 	print("⏰ Intervalo de auto-save alterado para " + str(interval) + " segundos")
+
+func _get_default_cache() -> Dictionary:
+	"""Retorna estrutura padrão do cache"""
+	return {
+		"player_name": "Jogador",
+		"player_gold": 100,
+		"player_level": 1,
+		"player_crystals": 0,
+		"player_id": "",
+		"player_avatar": 0,
+		"unlocked_characters": [0],
+		"cache_version": CACHE_VERSION,
+		"created_at": Time.get_unix_time_from_system(),
+		"last_updated": Time.get_unix_time_from_system()
+	}
